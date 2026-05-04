@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SearchMee – Find Nearby Shops & Local Services in Noida, Delhi NCR</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SearchMee – Find Nearby Shops & Local Services in Noida, Delhi NCR</title>
   <meta name="description" content="SearchMee helps you find nearby kirana stores, medical shops, salons, electricians and local services in Noida, Delhi, Ghaziabad. Register your shop free. Launching soon on Android.">
   <meta name="keywords" content="nearby shops, shops near me, kirana store near me, medical store near me, local shops Noida, local services Delhi NCR, dukaan near me, SearchMee">
   <meta name="robots" content="index, follow">
@@ -19,612 +19,727 @@
   <meta name="twitter:description" content="Discover local shops near you. Launching soon.">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SearchMee","url":"https://searchmee.in","description":"Find nearby shops and local services across India","potentialAction":{"@type":"SearchAction","target":"https://searchmee.in/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"SearchMee","url":"https://searchmee.in","logo":"https://searchmee.in/logo.png","sameAs":["https://instagram.com/searchmee","https://facebook.com/searchmee"]}</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800;900&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy:  #0B1628;
-      --navy2: #1A2B4A;
-      --blue:  #2563EB;
-      --blue2: #1D4ED8;
-      --cyan:  #06B6D4;
-      --green: #10B981;
-      --bg:    #F0F4FF;
-      --white: #FFFFFF;
-      --g1:    #0F172A;
-      --g2:    #334155;
-      --g3:    #64748B;
-      --g4:    #E2E8F0;
-    }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
-    body{font-family:'Mukta',sans-serif;background:var(--white);color:var(--g1);overflow-x:hidden;}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes pulseRing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.8);opacity:0}}
-    @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-    @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+:root {
+  --orange: #E84C0A;
+  --orange-light: #FF6B35;
+  --orange-glow: rgba(232, 76, 10, 0.18);
+  --dark: #0C0602;
+  --dark-2: #160B04;
+  --dark-3: #221008;
+  --cream: #FBF8F4;
+  --cream-2: #F5F0EA;
+  --text: #18120D;
+  --text-2: #5A4A3F;
+  --text-3: #9A8880;
+  --border: #EDE5DC;
+  --green: #1B7A45;
+  --white: #FFFFFF;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+}
 
-    .fade-up{animation:fadeUp .7s ease both;}
-    .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.44s}.d5{animation-delay:.58s}
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); background: var(--cream); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
-    /* NAV */
-    nav{
-      position:fixed;top:0;left:0;right:0;z-index:100;
-      background:rgba(11,22,40,.93);
-      backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-      border-bottom:1px solid rgba(255,255,255,.07);
-      padding:0 32px;height:64px;
-      display:flex;align-items:center;justify-content:space-between;
-    }
-    .nav-logo{
-      font-family:'Baloo 2',sans-serif;font-size:24px;font-weight:900;
-      color:var(--white);text-decoration:none;letter-spacing:-.5px;
-    }
-    .nav-logo span{color:#60A5FA;}
-    .nav-cta{
-      background:linear-gradient(135deg,#2563EB,#06B6D4);
-      color:var(--white);border:none;padding:10px 26px;
-      border-radius:50px;font-size:14px;font-weight:700;
-      cursor:pointer;text-decoration:none;transition:all .25s;
-      font-family:'Mukta',sans-serif;
-      box-shadow:0 4px 18px rgba(37,99,235,.4);
-    }
-    .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,99,235,.55);}
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 10px; }
 
-    /* HERO */
-    .hero{
-      min-height:100vh;background:var(--navy);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      padding:110px 20px 72px;text-align:center;
-      position:relative;overflow:hidden;
-    }
-    .hero::before{
-      content:'';position:absolute;inset:0;
-      background:
-        radial-gradient(ellipse 80% 55% at 15% 15%,rgba(37,99,235,.24) 0%,transparent 60%),
-        radial-gradient(ellipse 60% 50% at 85% 85%,rgba(6,182,212,.16) 0%,transparent 55%),
-        radial-gradient(ellipse 40% 35% at 65% 5%,rgba(59,130,246,.1) 0%,transparent 50%);
-      pointer-events:none;
-    }
-    .hero-grid{
-      position:absolute;inset:0;
-      background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1px);
-      background-size:38px 38px;pointer-events:none;
-    }
-    .orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;opacity:.45;}
-    .orb1{width:420px;height:420px;background:radial-gradient(circle,rgba(37,99,235,.38),transparent 70%);top:-120px;left:-100px;animation:floatY 9s ease-in-out infinite;}
-    .orb2{width:320px;height:320px;background:radial-gradient(circle,rgba(6,182,212,.32),transparent 70%);bottom:-90px;right:-70px;animation:floatY 11s ease-in-out infinite reverse;}
+/* ── NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  height: 68px; display: flex; align-items: center;
+  padding: 0 max(24px, calc((100vw - 1160px) / 2));
+  background: rgba(12, 6, 2, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo {
+  font-family: var(--font-display); font-size: 21px; font-weight: 900;
+  color: var(--white); letter-spacing: -0.3px; margin-right: auto;
+  font-style: italic;
+}
+.nav-logo span { color: var(--orange-light); font-style: normal; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  font-size: 13.5px; font-weight: 500; color: rgba(255,255,255,0.5);
+  text-decoration: none; letter-spacing: 0.1px; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-btn {
+  background: var(--orange); color: var(--white);
+  font-family: var(--font-body); font-size: 13.5px; font-weight: 600;
+  padding: 9px 20px; border-radius: 10px; border: none; cursor: pointer;
+  text-decoration: none; display: inline-block;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 4px 12px rgba(232,76,10,0.4);
+  transition: all 0.2s; margin-left: 8px;
+}
+.nav-btn:hover { background: var(--orange-light); transform: translateY(-1px); }
 
-    .hero-badge{
-      background:linear-gradient(135deg,rgba(6,182,212,.18),rgba(37,99,235,.18));
-      border:1px solid rgba(6,182,212,.5);
-      color:#67E8F9;font-size:13px;font-weight:700;
-      padding:7px 22px;border-radius:50px;
-      margin-bottom:30px;display:inline-flex;align-items:center;gap:9px;
-      letter-spacing:.8px;text-transform:uppercase;
-    }
-    .bdot{width:7px;height:7px;background:#06B6D4;border-radius:50%;position:relative;flex-shrink:0;}
-    .bdot::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:rgba(6,182,212,.4);animation:pulseRing 1.6s ease-out infinite;}
+/* ── HERO ── */
+.hero {
+  min-height: 100svh;
+  background: var(--dark);
+  display: grid; place-items: center;
+  padding: 68px 24px 0;
+  position: relative; overflow: hidden;
+}
 
-    .hero h1{
-      font-family:'Baloo 2',sans-serif;
-      font-size:clamp(38px,7.5vw,72px);
-      font-weight:900;color:var(--white);
-      line-height:1.06;margin-bottom:22px;
-      letter-spacing:-1.5px;
-    }
-    .hero h1 .hl{
-      background:linear-gradient(135deg,#60A5FA 0%,#06B6D4 100%);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    }
-    .hero-sub{
-      font-size:clamp(16px,2.2vw,19px);color:#94A3B8;
-      max-width:530px;margin:0 auto 14px;line-height:1.7;
-    }
-    .hero-hindi{
-      font-size:17px;color:#60A5FA;margin-bottom:46px;
-      font-style:italic;font-family:'Baloo 2',sans-serif;font-weight:600;
-    }
+.hero-glow {
+  position: absolute; pointer-events: none;
+  border-radius: 50%; filter: blur(80px);
+}
+.hero-glow-1 {
+  width: 640px; height: 640px;
+  top: -120px; left: 50%; transform: translateX(-30%);
+  background: radial-gradient(circle, rgba(232,76,10,0.2) 0%, transparent 70%);
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+.hero-glow-2 {
+  width: 400px; height: 400px;
+  bottom: 60px; left: -80px;
+  background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 70%);
+  animation: pulse-glow 8s ease-in-out infinite reverse;
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; transform: translateX(-30%) scale(1); }
+  50% { opacity: 0.7; transform: translateX(-30%) scale(1.08); }
+}
 
-    /* HERO BUTTONS */
-    .hero-btns{
-      display:flex;gap:16px;flex-wrap:wrap;
-      justify-content:center;margin-bottom:56px;
-    }
-    .btn-primary{
-      background:linear-gradient(135deg,#2563EB 0%,#1D4ED8 100%);
-      color:var(--white);padding:17px 36px;border-radius:14px;
-      font-size:17px;font-weight:700;
-      text-decoration:none;border:none;cursor:pointer;
-      transition:all .25s;display:inline-flex;align-items:center;gap:10px;
-      font-family:'Mukta',sans-serif;
-      box-shadow:0 5px 28px rgba(37,99,235,.45);
-      position:relative;overflow:hidden;
-    }
-    .btn-primary::after{
-      content:'';position:absolute;inset:0;
-      background:linear-gradient(135deg,rgba(255,255,255,.12),transparent);
-    }
-    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(37,99,235,.6);}
-    .btn-primary .bi{font-size:20px;animation:floatY 3.5s ease-in-out infinite;}
+/* Grid texture */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%);
+}
 
-    .btn-secondary{
-      background:rgba(255,255,255,.07);
-      border:1.5px solid rgba(255,255,255,.22);
-      color:var(--white);padding:17px 32px;
-      border-radius:14px;font-size:17px;font-weight:600;
-      text-decoration:none;transition:all .25s;
-      display:inline-flex;align-items:center;gap:10px;
-      font-family:'Mukta',sans-serif;
-      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-    }
-    .btn-secondary:hover{
-      border-color:#06B6D4;color:#67E8F9;
-      background:rgba(6,182,212,.1);transform:translateY(-3px);
-      box-shadow:0 8px 28px rgba(6,182,212,.2);
-    }
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: 780px; width: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  padding: 80px 0 60px;
+}
 
-    /* STATS BAR */
-    .hero-stats{
-      display:flex;flex-wrap:wrap;justify-content:center;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:20px;padding:6px;
-      max-width:580px;width:100%;
-      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-    }
-    .stat{flex:1;min-width:100px;text-align:center;padding:16px 10px;border-right:1px solid rgba(255,255,255,.07);}
-    .stat:last-child{border-right:none;}
-    .stat-num{
-      font-family:'Baloo 2',sans-serif;font-size:25px;font-weight:900;
-      background:linear-gradient(135deg,#fff,#93C5FD);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    }
-    .stat-label{font-size:11px;color:#475569;margin-top:2px;text-transform:uppercase;letter-spacing:.5px;}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,107,53,0.1);
+  border: 1px solid rgba(255,107,53,0.2);
+  color: var(--orange-light);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.4px;
+  padding: 6px 14px; border-radius: 100px;
+  margin-bottom: 32px;
+  animation: rise 0.7s cubic-bezier(.22,1,.36,1) both;
+}
+.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange-light); animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-    /* SECTION BASE */
-    .section{padding:80px 20px;}
-    .section-inner{max-width:920px;margin:0 auto;}
-    .section-tag{
-      font-size:11px;font-weight:700;letter-spacing:2px;
-      text-transform:uppercase;color:var(--blue);
-      margin-bottom:10px;display:inline-flex;align-items:center;gap:8px;
-    }
-    .section-tag::before{content:'';display:inline-block;width:22px;height:2px;background:var(--blue);border-radius:2px;}
-    .section-title{
-      font-family:'Baloo 2',sans-serif;
-      font-size:clamp(27px,4vw,40px);font-weight:800;
-      color:var(--navy2);line-height:1.15;margin-bottom:14px;letter-spacing:-.5px;
-    }
-    .section-sub{font-size:16px;color:var(--g3);max-width:520px;line-height:1.65;margin-bottom:52px;}
+.hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 8.5vw, 92px);
+  font-weight: 900; line-height: 1.0; letter-spacing: -3px;
+  color: var(--white);
+  margin-bottom: 24px;
+  animation: rise 0.7s 0.08s cubic-bezier(.22,1,.36,1) both;
+}
+.hero-h1 em { font-style: italic; color: var(--orange-light); }
+.hero-h1 .outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.2);
+}
 
-    /* HOW IT WORKS */
-    .how-section{background:#fff;}
-    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
-    .step-card{
-      background:var(--bg);border:1px solid rgba(37,99,235,.1);
-      border-radius:18px;padding:30px 24px;transition:all .3s;
-      position:relative;overflow:hidden;
-    }
-    .step-card::before{
-      content:'';position:absolute;top:0;left:0;right:0;height:3px;
-      background:linear-gradient(90deg,#2563EB,#06B6D4);
-      opacity:0;transition:opacity .3s;
-    }
-    .step-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(37,99,235,.13);border-color:rgba(37,99,235,.25);}
-    .step-card:hover::before{opacity:1;}
-    .step-num{
-      width:44px;height:44px;border-radius:12px;
-      background:linear-gradient(135deg,#EFF6FF,#DBEAFE);
-      color:var(--blue);font-family:'Baloo 2',sans-serif;
-      font-size:20px;font-weight:900;
-      display:flex;align-items:center;justify-content:center;
-      margin-bottom:18px;box-shadow:0 2px 8px rgba(37,99,235,.18);
-    }
-    .step-title{font-size:16px;font-weight:700;color:var(--navy2);margin-bottom:8px;}
-    .step-desc{font-size:14px;color:var(--g3);line-height:1.65;}
+.hero-p {
+  font-size: 17px; font-weight: 400; line-height: 1.7;
+  color: rgba(255,255,255,0.45); max-width: 500px;
+  margin-bottom: 10px;
+  animation: rise 0.7s 0.14s cubic-bezier(.22,1,.36,1) both;
+}
+.hero-hindi {
+  font-size: 15px; color: rgba(255,107,53,0.45);
+  font-style: italic; margin-bottom: 40px;
+  animation: rise 0.7s 0.18s cubic-bezier(.22,1,.36,1) both;
+}
 
-    /* PLAN */
-    .plan-section{background:var(--bg);}
-    .plan-center{max-width:440px;margin:0 auto;}
-    .plan-card{
-      background:var(--white);border-radius:24px;
-      border:2px solid #2563EB;padding:36px 32px;
-      box-shadow:0 10px 48px rgba(37,99,235,.12);
-      position:relative;overflow:hidden;
-    }
-    .plan-card::after{
-      content:'';position:absolute;top:0;left:0;right:0;height:4px;
-      background:linear-gradient(90deg,#2563EB,#06B6D4);
-    }
-    .plan-name{font-family:'Baloo 2',sans-serif;font-size:22px;font-weight:800;color:var(--navy2);margin-bottom:6px;}
-    .plan-price{
-      font-family:'Baloo 2',sans-serif;font-size:52px;font-weight:900;
-      color:var(--navy2);margin:14px 0 4px;letter-spacing:-2px;
-    }
-    .plan-price span{font-size:15px;font-weight:500;color:var(--g3);letter-spacing:0;}
-    .plan-pitch{font-size:14px;color:var(--green);font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:6px;}
-    .plan-features{list-style:none;margin-bottom:28px;}
-    .plan-features li{font-size:15px;color:var(--g2);padding:9px 0;border-bottom:1px solid var(--g4);display:flex;align-items:center;gap:10px;}
-    .plan-features li:last-child{border-bottom:none;}
-    .check{color:var(--green);font-size:17px;flex-shrink:0;}
-    .cross{color:#CBD5E1;font-size:17px;flex-shrink:0;}
-    .plan-btn-full{
-      display:block;text-align:center;padding:16px;
-      border-radius:12px;font-size:16px;font-weight:700;
-      text-decoration:none;
-      background:linear-gradient(135deg,#2563EB,#1D4ED8);
-      color:var(--white);transition:all .25s;
-      font-family:'Mukta',sans-serif;
-      box-shadow:0 4px 18px rgba(37,99,235,.38);
-    }
-    .plan-btn-full:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,99,235,.55);}
+.hero-actions {
+  display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+  margin-bottom: 56px;
+  animation: rise 0.7s 0.22s cubic-bezier(.22,1,.36,1) both;
+}
+.btn-hero-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--orange); color: var(--white);
+  font-family: var(--font-body); font-size: 15px; font-weight: 600;
+  padding: 15px 30px; border-radius: 12px; border: none; cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.3), 0 8px 32px rgba(232,76,10,0.45);
+  transition: all 0.18s; letter-spacing: -0.1px;
+}
+.btn-hero-primary:hover { background: #d43e08; transform: translateY(-2px); box-shadow: 0 6px 0 rgba(0,0,0,0.3), 0 12px 40px rgba(232,76,10,0.5); }
+.btn-hero-primary:active { transform: translateY(0); }
 
-    /* WHY */
-    .why-section{background:var(--navy);position:relative;overflow:hidden;}
-    .why-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(37,99,235,.15) 0%,transparent 60%);pointer-events:none;}
-    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
-    .why-card{
-      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-      border-radius:18px;padding:26px;transition:all .3s;
-    }
-    .why-card:hover{background:rgba(255,255,255,.07);border-color:rgba(96,165,250,.3);transform:translateY(-4px);}
-    .why-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,rgba(37,99,235,.35),rgba(6,182,212,.2));display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;border:1px solid rgba(96,165,250,.2);}
-    .why-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:8px;}
-    .why-desc{font-size:14px;color:#64748B;line-height:1.65;}
+.btn-hero-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  font-family: var(--font-body); font-size: 15px; font-weight: 500;
+  padding: 15px 28px; border-radius: 12px; cursor: pointer;
+  text-decoration: none; transition: all 0.18s;
+}
+.btn-hero-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: var(--white); }
 
-    /* CATEGORIES */
-    .cat-section{background:var(--white);}
-    .city-block{margin-bottom:52px;}
-    .city-name{font-family:'Baloo 2',sans-serif;font-size:22px;font-weight:800;color:var(--navy2);margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--g4);display:flex;align-items:center;gap:10px;}
-    .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:10px;}
-    .cat-link{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--bg);border-radius:10px;border:1px solid var(--g4);text-decoration:none;color:var(--g2);font-size:14px;font-weight:500;transition:all .2s;}
-    .cat-link:hover{border-color:var(--blue);color:var(--blue);background:#EFF6FF;transform:translateX(2px);}
-    .cat-icon{font-size:17px;flex-shrink:0;}
+/* STAT PILLS */
+.stat-pills {
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+  animation: rise 0.7s 0.28s cubic-bezier(.22,1,.36,1) both;
+}
+.stat-pill {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px; padding: 10px 18px;
+}
+.sp-num { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--white); font-style: italic; }
+.sp-label { font-size: 12px; color: rgba(255,255,255,0.35); font-weight: 500; }
+.sp-div { width: 1px; height: 20px; background: rgba(255,255,255,0.1); }
 
-    /* NOTIFY */
-    .notify-section{background:var(--bg);}
-    .notify-box{
-      background:var(--white);
-      border:2px solid rgba(37,99,235,.15);
-      border-radius:28px;padding:56px 40px;
-      text-align:center;max-width:580px;margin:0 auto;
-      position:relative;overflow:hidden;
-      box-shadow:0 20px 60px rgba(37,99,235,.08);
-    }
-    .notify-box::before{
-      content:'';position:absolute;top:0;left:0;right:0;height:4px;
-      background:linear-gradient(90deg,#2563EB,#06B6D4,#2563EB);
-      background-size:200% 100%;animation:gradShift 3s ease infinite;
-    }
-    .notify-emoji{font-size:50px;margin-bottom:20px;display:block;animation:floatY 4s ease-in-out infinite;}
-    .notify-title{font-family:'Baloo 2',sans-serif;font-size:32px;font-weight:900;color:var(--navy2);margin-bottom:12px;letter-spacing:-.5px;}
-    .notify-sub{color:var(--g3);font-size:16px;margin-bottom:32px;line-height:1.65;max-width:400px;margin-left:auto;margin-right:auto;}
-    .notify-btn-main{
-      display:inline-flex;align-items:center;gap:10px;
-      background:linear-gradient(135deg,#2563EB,#06B6D4);
-      color:var(--white);padding:17px 46px;border-radius:14px;
-      font-size:17px;font-weight:700;text-decoration:none;
-      transition:all .25s;font-family:'Mukta',sans-serif;
-      box-shadow:0 6px 30px rgba(37,99,235,.42);
-      margin-bottom:20px;
-    }
-    .notify-btn-main:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(37,99,235,.58);}
-    .notify-note{font-size:13px;color:var(--g3);}
-    .notify-note span{color:var(--green);font-weight:700;}
+/* ── CATEGORY SECTION ── */
+.cat-section {
+  background: var(--cream);
+  padding: 64px 0 0;
+}
+.cat-section-head {
+  max-width: 1160px; margin: 0 auto;
+  padding: 0 max(24px, calc((100vw - 1160px) / 2));
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 28px;
+}
+.cat-section-title {
+  font-family: var(--font-display); font-size: 32px; font-weight: 700;
+  color: var(--text); letter-spacing: -1px; font-style: italic;
+}
+.cat-section-title span { color: var(--orange); font-style: normal; }
+.cat-hint { font-size: 13px; color: var(--text-3); font-weight: 500; }
 
-    /* SEO */
-    .seo-section{background:#fff;}
-    .seo-text{max-width:800px;margin:0 auto;}
-    .seo-text h2{font-family:'Baloo 2',sans-serif;font-size:24px;font-weight:800;color:var(--navy2);margin:36px 0 12px;}
-    .seo-text h2:first-child{margin-top:0;}
-    .seo-text p{font-size:15px;color:var(--g3);line-height:1.75;margin-bottom:12px;}
+/* Scrollable row */
+.cat-row-wrap {
+  overflow-x: auto; padding-bottom: 20px;
+  padding-left: max(24px, calc((100vw - 1160px) / 2));
+}
+.cat-row-wrap::-webkit-scrollbar { height: 0; }
+.cat-row { display: flex; gap: 12px; width: max-content; padding-right: 40px; }
 
-    /* FOOTER */
-    footer{background:var(--navy);padding:40px 24px;text-align:center;border-top:1px solid rgba(255,255,255,.06);}
-    .footer-logo{font-family:'Baloo 2',sans-serif;font-size:26px;font-weight:900;color:var(--white);margin-bottom:16px;letter-spacing:-.5px;}
-    .footer-logo span{color:#60A5FA;}
-    .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;}
-    .footer-links a{color:#475569;text-decoration:none;font-size:14px;transition:color .2s;}
-    .footer-links a:hover{color:#93C5FD;}
-    .footer-note{font-size:13px;color:#334155;}
+.cat-tile {
+  flex-shrink: 0; width: 120px;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px 10px 14px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  text-decoration: none; cursor: pointer;
+  transition: all 0.2s cubic-bezier(.22,1,.36,1);
+  position: relative; overflow: hidden;
+}
+.cat-tile::after {
+  content: ''; position: absolute; inset: 0;
+  background: var(--orange); opacity: 0;
+  transition: opacity 0.2s;
+}
+.cat-tile:hover { border-color: var(--orange); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(232,76,10,0.15); }
+.cat-tile:hover::after { opacity: 1; }
+.cat-tile:hover .ct-icon, .cat-tile:hover .ct-name, .cat-tile:hover .ct-city { position: relative; z-index: 1; }
+.cat-tile:hover .ct-name { color: var(--white); }
+.cat-tile:hover .ct-city { color: rgba(255,255,255,0.65); }
+.ct-icon { font-size: 30px; position: relative; z-index: 1; line-height: 1; }
+.ct-name { font-size: 12px; font-weight: 600; color: var(--text); text-align: center; line-height: 1.3; position: relative; z-index: 1; transition: color 0.2s; }
+.ct-city { font-size: 10px; color: var(--text-3); position: relative; z-index: 1; font-weight: 500; transition: color 0.2s; }
 
-    /* RESPONSIVE */
-    @media(max-width:640px){
-      nav{padding:0 18px;}
-      .hero-btns{flex-direction:column;align-items:stretch;}
-      .btn-primary,.btn-secondary{justify-content:center;padding:16px 22px;font-size:16px;}
-      .hero-stats{border-radius:16px;}
-      .stat{padding:13px 7px;}
-      .stat-num{font-size:21px;}
-      .notify-box{padding:40px 22px;}
-      .plan-card{padding:28px 20px;}
-    }
-  </style>
+/* City bar */
+.city-bar {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0 max(24px, calc((100vw - 1160px) / 2));
+  display: flex; align-items: center; gap: 6px;
+  overflow-x: auto; height: 52px;
+  position: sticky; top: 68px; z-index: 800;
+}
+.city-bar::-webkit-scrollbar { display: none; }
+.city-label-txt { font-size: 12px; font-weight: 700; color: var(--text-3); white-space: nowrap; margin-right: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
+.city-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: 100px;
+  font-size: 12.5px; font-weight: 500;
+  border: 1px solid var(--border); background: transparent;
+  color: var(--text-2); cursor: pointer; white-space: nowrap;
+  font-family: var(--font-body); transition: all 0.15s;
+}
+.city-chip:hover { border-color: var(--orange); color: var(--orange); }
+.city-chip.active { background: var(--text); color: var(--white); border-color: var(--text); }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: #22C55E; flex-shrink: 0; }
+.soon-dot { width: 6px; height: 6px; border-radius: 50%; background: #D1C4BB; flex-shrink: 0; }
+
+/* ── MAIN ── */
+.main { padding: 72px max(24px, calc((100vw - 1160px) / 2)); background: var(--cream); }
+
+.eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--orange);
+  margin-bottom: 10px; display: block;
+}
+.section-h {
+  font-family: var(--font-display); font-size: clamp(28px,4vw,44px);
+  font-weight: 700; letter-spacing: -1.5px; color: var(--text);
+  line-height: 1.1; margin-bottom: 12px; font-style: italic;
+}
+.section-h em { color: var(--orange); }
+.section-sub {
+  font-size: 15.5px; color: var(--text-2); line-height: 1.7;
+  max-width: 460px; margin-bottom: 40px; font-weight: 400;
+}
+
+/* HOW IT WORKS */
+.how-section { margin-bottom: 80px; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 16px; }
+.step {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 32px 26px;
+  position: relative; overflow: hidden;
+  transition: all 0.2s; cursor: default;
+}
+.step:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: transparent; }
+.step-num {
+  font-family: var(--font-display); font-size: 11px; font-weight: 700;
+  color: var(--orange); letter-spacing: 1px; text-transform: uppercase;
+  background: rgba(232,76,10,0.08); display: inline-flex; align-items: center;
+  padding: 4px 10px; border-radius: 100px; margin-bottom: 20px;
+}
+.step-icon { font-size: 32px; margin-bottom: 14px; display: block; }
+.step-title { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 10px; font-style: italic; letter-spacing: -0.5px; }
+.step-desc { font-size: 13.5px; color: var(--text-2); line-height: 1.65; }
+
+/* PRICING */
+.pricing-section {
+  background: var(--dark); border-radius: 28px;
+  padding: 56px 48px; margin-bottom: 80px;
+  position: relative; overflow: hidden;
+}
+.pricing-section::before {
+  content: ''; position: absolute;
+  top: -100px; right: -100px; width: 500px; height: 500px;
+  border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(232,76,10,0.2) 0%, transparent 65%);
+}
+.pricing-section .section-h { color: var(--white); }
+.pricing-section .section-sub { color: rgba(255,255,255,0.4); }
+
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 16px; position: relative; z-index: 2; }
+
+.plan {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px; padding: 30px 26px;
+  display: flex; flex-direction: column;
+  position: relative; transition: all 0.2s;
+}
+.plan:hover { background: rgba(255,255,255,0.07); }
+.plan.featured {
+  background: var(--orange);
+  border-color: var(--orange);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.1) inset, 0 24px 64px rgba(232,76,10,0.5);
+}
+.plan-tag {
+  position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+  background: var(--white); color: var(--orange);
+  font-size: 10px; font-weight: 800; letter-spacing: 1px;
+  padding: 4px 14px; border-radius: 0 0 12px 12px; text-transform: uppercase;
+}
+.plan-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+.plan-name { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--white); font-style: italic; margin-bottom: 4px; }
+.plan-price {
+  font-family: var(--font-display); font-size: 48px; font-weight: 900;
+  color: var(--white); line-height: 1; letter-spacing: -2px;
+  margin-bottom: 4px;
+}
+.plan-price sup { font-size: 20px; font-weight: 600; vertical-align: super; letter-spacing: 0; }
+.plan-price sub { font-size: 14px; font-weight: 400; opacity: 0.5; letter-spacing: 0; }
+.plan-tagline { font-size: 12.5px; color: rgba(255,255,255,0.45); margin-bottom: 24px; }
+.plan.featured .plan-tagline { color: rgba(255,255,255,0.7); }
+.plan-feats { list-style: none; flex: 1; margin-bottom: 24px; }
+.plan-feat {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13.5px; color: rgba(255,255,255,0.6);
+  padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.plan-feat:last-child { border: none; }
+.plan.featured .plan-feat { color: rgba(255,255,255,0.9); }
+.pf-icon { font-size: 13px; color: var(--orange-light); flex-shrink: 0; margin-top: 2px; }
+.plan.featured .pf-icon { color: var(--white); }
+.plan-feat.dim { opacity: 0.3; }
+.plan-cta {
+  width: 100%; padding: 13px;
+  border-radius: 12px; font-family: var(--font-body);
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  border: none; transition: all 0.18s; text-decoration: none;
+  display: block; text-align: center;
+}
+.plan-cta.ghost { background: rgba(255,255,255,0.08); color: var(--white); border: 1px solid rgba(255,255,255,0.15); }
+.plan-cta.ghost:hover { background: rgba(255,255,255,0.14); }
+.plan-cta.white { background: var(--white); color: var(--orange); }
+.plan-cta.white:hover { background: rgba(255,255,255,0.92); }
+
+/* WHY */
+.why-section { margin-bottom: 80px; }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px,1fr)); gap: 12px; }
+.why-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px 20px;
+  transition: all 0.2s;
+}
+.why-card:hover { border-color: var(--orange); box-shadow: 0 4px 20px rgba(232,76,10,0.1); transform: translateY(-2px); }
+.wc-icon { font-size: 26px; margin-bottom: 12px; display: block; }
+.wc-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; font-style: italic; }
+.wc-desc { font-size: 13px; color: var(--text-2); line-height: 1.55; }
+
+/* CTA BAND */
+.cta-band {
+  background: linear-gradient(130deg, #C93500 0%, var(--orange) 45%, #FF7A45 100%);
+  border-radius: 24px; padding: 56px 48px;
+  display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+  margin-bottom: 0; position: relative; overflow: hidden;
+}
+.cta-band::after {
+  content: '🏪'; position: absolute;
+  font-size: 180px; right: 180px; top: -30px;
+  opacity: 0.07; transform: rotate(-15deg);
+  pointer-events: none;
+}
+.cta-title { font-family: var(--font-display); font-size: clamp(26px,4vw,40px); font-weight: 900; color: var(--white); font-style: italic; letter-spacing: -1px; margin-bottom: 8px; }
+.cta-desc { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+.cta-btns { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+.btn-cta-w { background: var(--white); color: var(--orange); font-family: var(--font-body); font-size: 14px; font-weight: 700; padding: 13px 24px; border-radius: 12px; border: none; cursor: pointer; text-decoration: none; white-space: nowrap; text-align: center; transition: all 0.18s; }
+.btn-cta-w:hover { background: rgba(255,255,255,0.92); }
+.btn-cta-o { background: rgba(255,255,255,0.12); color: var(--white); font-family: var(--font-body); font-size: 14px; font-weight: 600; padding: 13px 24px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; text-decoration: none; white-space: nowrap; text-align: center; transition: all 0.18s; }
+.btn-cta-o:hover { background: rgba(255,255,255,0.2); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark-2);
+  padding: 64px max(24px, calc((100vw - 1160px) / 2)) 32px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 40px; margin-bottom: 48px; padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.footer-brand-logo {
+  font-family: var(--font-display); font-size: 24px; font-weight: 900;
+  color: var(--white); font-style: italic; margin-bottom: 10px;
+}
+.footer-brand-logo span { color: var(--orange-light); font-style: normal; }
+.footer-tagline { font-size: 13.5px; color: rgba(255,255,255,0.35); line-height: 1.6; max-width: 220px; margin-bottom: 20px; }
+.footer-social { display: flex; gap: 10px; }
+.social-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.5); font-size: 12.5px; font-weight: 500;
+  padding: 6px 12px; border-radius: 100px; text-decoration: none;
+  transition: all 0.2s;
+}
+.social-pill:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+.footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+.footer-col a { display: block; font-size: 13.5px; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; font-weight: 400; }
+.footer-col a:hover { color: var(--white); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.2); }
+.footer-love { font-size: 12.5px; color: rgba(255,255,255,0.2); }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .nav-links a:not(.nav-btn) { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .cta-band { grid-template-columns: 1fr; }
+  .cta-btns { flex-direction: row; flex-wrap: wrap; }
+  .pricing-section { padding: 36px 20px; }
+}
+@media (max-width: 600px) {
+  .hero-h1 { letter-spacing: -2px; }
+  .hero-actions { flex-direction: column; width: 100%; }
+  .btn-hero-primary, .btn-hero-ghost { width: 100%; justify-content: center; }
+  .stat-pills { gap: 8px; }
+  .stat-pill { padding: 8px 14px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .cta-band { padding: 36px 24px; }
+  .main { padding: 48px 20px; }
+}
+</style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <a class="nav-logo" href="/">Search<span>Mee</span></a>
-  <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform" target="_blank">Register Free →</a>
+<nav class="nav">
+  <div class="nav-logo">Search<span>Mee</span></div>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#categories">Browse</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform" target="_blank" class="nav-btn">🏪 Register Free</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="hero-grid"></div>
-
-  <div class="hero-badge fade-up">
-    <span class="bdot"></span>
-    Coming Soon on Android
-  </div>
-
-  <h1 class="fade-up d1">
-    Find <span class="hl">Nearby Shops</span><br>
-    Across India
-  </h1>
-
-  <p class="hero-sub fade-up d2">
-    Kirana stores, medical shops, salons, electricians and more —
-    discover trusted local businesses within 5 km of you.
-  </p>
-
-  <p class="hero-hindi fade-up d3">अपने पास, अपनी दुकान</p>
-
-  <div class="hero-btns fade-up d4">
-    <a class="btn-primary"
-       href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform"
-       target="_blank">
-      <span class="bi">🏪</span> Register Your Shop — Free
-    </a>
-    <a class="btn-secondary"
-       href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform"
-       target="_blank">
-      🔔 Get Launch Notification
-    </a>
-  </div>
-
-  <div class="hero-stats fade-up d5">
-    <div class="stat">
-      <div class="stat-num">5 km</div>
-      <div class="stat-label">Search radius</div>
+<div class="hero">
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Coming Soon on Android &nbsp;·&nbsp; Launching in Noida First
     </div>
-    <div class="stat">
-      <div class="stat-num">Free</div>
-      <div class="stat-label">Basic listing</div>
+    <h1 class="hero-h1">
+      Find shops<br>
+      <em>near you,</em><br>
+      <span class="outline">instantly.</span>
+    </h1>
+    <p class="hero-p">Kirana stores, salons, doctors, electricians and more — discover trusted local businesses within 5 km of you.</p>
+    <p class="hero-hindi">अपने पास, अपनी दुकान</p>
+    <div class="hero-actions">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform" target="_blank" class="btn-hero-primary">🏪 Register Your Shop — Free</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform" target="_blank" class="btn-hero-ghost">🔔 Get Launch Notification</a>
     </div>
-    <div class="stat">
-      <div class="stat-num">Rs.1/day</div>
-      <div class="stat-label">Verified plan</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">Noida</div>
-      <div class="stat-label">Launching first</div>
+    <div class="stat-pills">
+      <div class="stat-pill"><span class="sp-num">5 km</span><span class="sp-div"></span><span class="sp-label">Search Radius</span></div>
+      <div class="stat-pill"><span class="sp-num">Free</span><span class="sp-div"></span><span class="sp-label">Basic Listing</span></div>
+      <div class="stat-pill"><span class="sp-num">₹1</span><span class="sp-div"></span><span class="sp-label">Verified Plan</span></div>
+      <div class="stat-pill"><span class="sp-num">Noida</span><span class="sp-div"></span><span class="sp-label">Live Now</span></div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- HOW IT WORKS -->
-<section class="section how-section">
-  <div class="section-inner">
-    <div class="section-tag">How it works</div>
-    <h2 class="section-title">Simple for shops. Simple for customers.</h2>
-    <p class="section-sub">No complicated setup. Register in 2 minutes. Customers find you by location.</p>
+<!-- CATEGORIES -->
+<div class="cat-section" id="categories">
+  <div class="cat-section-head">
+    <div class="cat-section-title">Browse <span>Categories</span></div>
+    <div class="cat-hint">Swipe to explore →</div>
+  </div>
+  <div class="cat-row-wrap">
+    <div class="cat-row">
+      <a href="https://www.searchmee.in/noida/kirana-stores.html" class="cat-tile"><span class="ct-icon">🛒</span><span class="ct-name">Kirana Stores</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/medical-stores.html" class="cat-tile"><span class="ct-icon">💊</span><span class="ct-name">Medical Shops</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/electricians.html" class="cat-tile"><span class="ct-icon">⚡</span><span class="ct-name">Electricians</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/plumbers.html" class="cat-tile"><span class="ct-icon">🔧</span><span class="ct-name">Plumbers</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/ac-repair.html" class="cat-tile"><span class="ct-icon">❄️</span><span class="ct-name">AC Repair</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/salons.html" class="cat-tile"><span class="ct-icon">✂️</span><span class="ct-name">Salons</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/restaurants.html" class="cat-tile"><span class="ct-icon">🍽️</span><span class="ct-name">Restaurants</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/gyms.html" class="cat-tile"><span class="ct-icon">💪</span><span class="ct-name">Gyms</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/mobile-repair.html" class="cat-tile"><span class="ct-icon">📱</span><span class="ct-name">Mobile Repair</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/car-repair.html" class="cat-tile"><span class="ct-icon">🚗</span><span class="ct-name">Car Repair</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/bike-repair.html" class="cat-tile"><span class="ct-icon">🏍️</span><span class="ct-name">Bike Repair</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/hospitals.html" class="cat-tile"><span class="ct-icon">🏥</span><span class="ct-name">Hospitals</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/coaching-centres.html" class="cat-tile"><span class="ct-icon">📚</span><span class="ct-name">Coaching</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/jewellery.html" class="cat-tile"><span class="ct-icon">💍</span><span class="ct-name">Jewellery</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/pet-shops.html" class="cat-tile"><span class="ct-icon">🐾</span><span class="ct-name">Pet Shops</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/furniture-shops.html" class="cat-tile"><span class="ct-icon">🛋️</span><span class="ct-name">Furniture</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/sweet-shops.html" class="cat-tile"><span class="ct-icon">🍬</span><span class="ct-name">Sweet Shops</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/hardware-stores.html" class="cat-tile"><span class="ct-icon">🔩</span><span class="ct-name">Hardware</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/computer-repair.html" class="cat-tile"><span class="ct-icon">💻</span><span class="ct-name">Computer</span><span class="ct-city">Noida</span></a>
+      <a href="https://www.searchmee.in/noida/pg-hostel.html" class="cat-tile"><span class="ct-icon">🏠</span><span class="ct-name">PG & Hostel</span><span class="ct-city">Noida</span></a>
+    </div>
+  </div>
+
+  <!-- City bar -->
+  <div class="city-bar">
+    <span class="city-label-txt">Expanding to</span>
+    <button class="city-chip active"><span class="live-dot"></span>Noida — Live</button>
+    <button class="city-chip"><span class="soon-dot"></span>Delhi</button>
+    <button class="city-chip"><span class="soon-dot"></span>Ghaziabad</button>
+    <button class="city-chip"><span class="soon-dot"></span>Greater Noida</button>
+    <button class="city-chip"><span class="soon-dot"></span>Lucknow</button>
+    <button class="city-chip"><span class="soon-dot"></span>Agra</button>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- HOW IT WORKS -->
+  <div class="how-section" id="how">
+    <span class="eyebrow">How It Works</span>
+    <div class="section-h">Simple for shops.<br><em>Simple for customers.</em></div>
+    <p class="section-sub">No complicated setup. Register in 2 minutes. Customers find you by location — no tech skills needed.</p>
     <div class="steps">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <div class="step-title">Shop registers free</div>
-        <div class="step-desc">Fill basic details — name, category, address, phone. Takes 2 minutes. No payment required.</div>
+      <div class="step">
+        <div class="step-num">Step 01</div>
+        <span class="step-icon">🏪</span>
+        <div class="step-title">Register Free</div>
+        <p class="step-desc">Fill in your shop name, category, address and phone number. Takes 2 minutes. No payment required to start.</p>
       </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <div class="step-title">We verify &amp; list</div>
-        <div class="step-desc">Our team reviews and approves within 24–48 hours. Your shop goes live on the platform.</div>
+      <div class="step">
+        <div class="step-num">Step 02</div>
+        <span class="step-icon">✅</span>
+        <div class="step-title">We Verify & List</div>
+        <p class="step-desc">Our team reviews and approves your shop within 24–48 hours. Once approved, you go live on SearchMee.</p>
       </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <div class="step-title">Customers find you</div>
-        <div class="step-desc">Nearby customers open the app, search by category, and your shop appears on their screen.</div>
+      <div class="step">
+        <div class="step-num">Step 03</div>
+        <span class="step-icon">📍</span>
+        <div class="step-title">Customers Find You</div>
+        <p class="step-desc">Nearby customers open the app, search by category, and your shop appears right on their screen.</p>
       </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <div class="step-title">They call or WhatsApp</div>
-        <div class="step-desc">One tap — customer calls or messages you directly. No middleman, no commission per order.</div>
+      <div class="step">
+        <div class="step-num">Step 04</div>
+        <span class="step-icon">📞</span>
+        <div class="step-title">They Call or WhatsApp</div>
+        <p class="step-desc">One tap — the customer calls or WhatsApps you directly. No middleman, no commission on any order.</p>
       </div>
     </div>
   </div>
-</section>
 
-<!-- PLAN (Free only — pre-launch) -->
-<section class="section plan-section">
-  <div class="section-inner">
-    <div class="section-tag">Pricing</div>
-    <h2 class="section-title">Start free. Zero risk.</h2>
-    <p class="section-sub">Register your shop today at no cost. Be live on the platform from day one.</p>
-    <div class="plan-center">
-      <div class="plan-card">
-        <div class="plan-name">Free Listing</div>
-        <div class="plan-price">Rs.0 <span>/ forever</span></div>
-        <div class="plan-pitch">✅ Start today, no card needed</div>
-        <ul class="plan-features">
-          <li><span class="check">✓</span> Basic shop listing</li>
-          <li><span class="check">✓</span> Appear in search results</li>
-          <li><span class="check">✓</span> Call &amp; WhatsApp button</li>
-          <li><span class="check">✓</span> Working hours display</li>
-          <li><span class="cross">—</span> Verified badge <em style="font-size:12px;color:#94A3B8">(coming soon)</em></li>
-          <li><span class="cross">—</span> Top ranking in search <em style="font-size:12px;color:#94A3B8">(coming soon)</em></li>
-          <li><span class="cross">—</span> Analytics dashboard <em style="font-size:12px;color:#94A3B8">(coming soon)</em></li>
+  <!-- PRICING -->
+  <div class="pricing-section" id="pricing">
+    <span class="eyebrow" style="color:rgba(255,107,53,0.7)">Pricing</span>
+    <div class="section-h">Start free.<br><em>Zero risk.</em></div>
+    <p class="section-sub">List your shop at no cost today. Upgrade when you're ready — no pressure, ever.</p>
+    <div class="plans">
+
+      <div class="plan">
+        <span class="plan-icon">🆓</span>
+        <div class="plan-name">Free</div>
+        <div class="plan-price"><sup>₹</sup>0<sub> / forever</sub></div>
+        <div class="plan-tagline">Start today — no card needed</div>
+        <ul class="plan-feats">
+          <li class="plan-feat"><span class="pf-icon">✓</span> Basic shop listing</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> Appear in search results</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> Call & WhatsApp button</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> Working hours display</li>
+          <li class="plan-feat dim"><span class="pf-icon">—</span> Verified badge</li>
+          <li class="plan-feat dim"><span class="pf-icon">—</span> Top search ranking</li>
         </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform"
-           target="_blank" class="plan-btn-full">
-          🏪 Register Your Shop — Free
-        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform" target="_blank" class="plan-cta ghost">Register Free →</a>
       </div>
+
+      <div class="plan featured">
+        <div class="plan-tag">⭐ Most Popular</div>
+        <span class="plan-icon">✅</span>
+        <div class="plan-name">Verified</div>
+        <div class="plan-price"><sup>₹</sup>1<sub> / day</sub></div>
+        <div class="plan-tagline">Just ₹30/month · Cancel anytime</div>
+        <ul class="plan-feats">
+          <li class="plan-feat"><span class="pf-icon">✓</span> Everything in Free</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> ✅ Verified badge</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> Top of search results</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> Analytics dashboard</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> Priority support</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> Higher customer trust</li>
+        </ul>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform" target="_blank" class="plan-cta white">Get Verified →</a>
+      </div>
+
+      <div class="plan">
+        <span class="plan-icon">🚀</span>
+        <div class="plan-name">Premium</div>
+        <div class="plan-price"><sup>₹</sup>99<sub> / mo</sub></div>
+        <div class="plan-tagline">For serious business owners</div>
+        <ul class="plan-feats">
+          <li class="plan-feat"><span class="pf-icon">✓</span> Everything in Verified</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> Homepage featured spot</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> WhatsApp lead alerts</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> Multiple shop photos</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> Custom offers & deals</li>
+          <li class="plan-feat"><span class="pf-icon">✓</span> Dedicated support</li>
+        </ul>
+        <button class="plan-cta ghost" disabled>Coming Soon</button>
+      </div>
+
     </div>
   </div>
-</section>
 
-<!-- WHY APNANEAR -->
-<section class="section why-section">
-  <div class="section-inner" style="position:relative;">
-    <div class="section-tag" style="color:#60A5FA;">Why SearchMee</div>
-    <h2 class="section-title" style="color:#fff;">Simpler &amp; smarter for local shops.</h2>
-    <p class="section-sub" style="color:#475569;margin-bottom:40px;">Built for small shop owners — not big enterprises.</p>
+  <!-- WHY -->
+  <div class="why-section">
+    <span class="eyebrow">Why SearchMee</span>
+    <div class="section-h">Built for <em>small shops.</em><br>Not big enterprises.</div>
+    <p class="section-sub">Every feature is designed with the local Indian shop owner in mind — simple, affordable, effective.</p>
     <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">📍</div>
-        <div class="why-title">Truly local</div>
-        <div class="why-desc">5 km radius search — customers only see shops near them. No irrelevant results from other cities.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">💰</div>
-        <div class="why-title">Free to start</div>
-        <div class="why-desc">Basic listing is completely free. No daily charges, no per-lead fees, no hidden cost.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">📱</div>
-        <div class="why-title">Mobile first</div>
-        <div class="why-desc">Built for Android — India's platform. One tap to call or WhatsApp a shop directly.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">✅</div>
-        <div class="why-title">Verified shops</div>
-        <div class="why-desc">Every shop is manually reviewed before going live. Customers trust verified listings more.</div>
-      </div>
+      <div class="why-card"><span class="wc-icon">📍</span><div class="wc-title">Truly Local</div><p class="wc-desc">5 km radius — customers only see shops near them, not from other cities.</p></div>
+      <div class="why-card"><span class="wc-icon">💰</span><div class="wc-title">Free to Start</div><p class="wc-desc">No daily charges, no per-lead fees, zero hidden cost to get listed.</p></div>
+      <div class="why-card"><span class="wc-icon">📱</span><div class="wc-title">Mobile First</div><p class="wc-desc">Built for Android — India's platform. One tap to call or WhatsApp.</p></div>
+      <div class="why-card"><span class="wc-icon">✅</span><div class="wc-title">Verified Only</div><p class="wc-desc">Every shop manually reviewed before going live. No fake listings.</p></div>
+      <div class="why-card"><span class="wc-icon">🚫</span><div class="wc-title">No Commission</div><p class="wc-desc">100% of your earnings stay with you. We never take a cut per order.</p></div>
+      <div class="why-card"><span class="wc-icon">📊</span><div class="wc-title">Analytics</div><p class="wc-desc">Track views, calls and WhatsApp clicks — all in a simple dashboard.</p></div>
     </div>
   </div>
-</section>
 
-<!-- CATEGORIES + CITIES -->
-<section class="section cat-section">
-  <div class="section-inner">
-    <div class="section-tag">Browse by category</div>
-    <h2 class="section-title">Find local services near you</h2>
-    <p class="section-sub">We are live in Noida and expanding to Delhi, Ghaziabad, Greater Noida soon.</p>
-
-    <div class="city-block">
-      <div class="city-name">📍 Noida</div>
-      <div class="cat-grid">
-        <a href="/noida/kirana-stores.html" class="cat-link"><span class="cat-icon">🛒</span> Kirana Stores in Noida</a>
-        <a href="/noida/medical-stores.html" class="cat-link"><span class="cat-icon">💊</span> Medical Stores in Noida</a>
-        <a href="/noida/electricians.html" class="cat-link"><span class="cat-icon">⚡</span> Electricians in Noida</a>
-        <a href="/noida/plumbers.html" class="cat-link"><span class="cat-icon">🔧</span> Plumbers in Noida</a>
-        <a href="/noida/ac-repair.html" class="cat-link"><span class="cat-icon">❄️</span> AC Repair in Noida</a>
-        <a href="/noida/salons.html" class="cat-link"><span class="cat-icon">✂️</span> Salons in Noida</a>
-        <a href="/noida/restaurants.html" class="cat-link"><span class="cat-icon">🍽️</span> Restaurants in Noida</a>
-        <a href="/noida/gyms.html" class="cat-link"><span class="cat-icon">💪</span> Gyms in Noida</a>
-        <a href="/noida/mobile-repair.html" class="cat-link"><span class="cat-icon">📱</span> Mobile Repair in Noida</a>
-        <a href="/noida/electronics-shops.html" class="cat-link"><span class="cat-icon">💡</span> Electronics in Noida</a>
-        <a href="/noida/car-repair.html" class="cat-link"><span class="cat-icon">🚗</span> Car Repair in Noida</a>
-        <a href="/noida/bike-repair.html" class="cat-link"><span class="cat-icon">🏍️</span> Bike Repair in Noida</a>
-        <a href="/noida/hospitals.html" class="cat-link"><span class="cat-icon">🏥</span> Hospitals in Noida</a>
-        <a href="/noida/jewellery.html" class="cat-link"><span class="cat-icon">💍</span> Jewellery Shops in Noida</a>
-        <a href="/noida/furniture-shops.html" class="cat-link"><span class="cat-icon">🛋️</span> Furniture in Noida</a>
-        <a href="/noida/pg-hostel.html" class="cat-link"><span class="cat-icon">🏠</span> PG &amp; Hostels in Noida</a>
-        <a href="/noida/pet-shops.html" class="cat-link"><span class="cat-icon">🐾</span> Pet Shops in Noida</a>
-        <a href="/noida/computer-repair.html" class="cat-link"><span class="cat-icon">💻</span> Computer Repair in Noida</a>
-        <a href="/noida/laptop-repair.html" class="cat-link"><span class="cat-icon">🖥️</span> Laptop Repair in Noida</a>
-        <a href="/noida/coaching-centres.html" class="cat-link"><span class="cat-icon">📚</span> Coaching in Noida</a>
-        <a href="/noida/sweet-shops.html" class="cat-link"><span class="cat-icon">🍬</span> Sweet Shops in Noida</a>
-        <a href="/noida/hardware-stores.html" class="cat-link"><span class="cat-icon">🔩</span> Hardware Stores in Noida</a>
-      </div>
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div>
+      <div class="cta-title">Ready to get found?</div>
+      <p class="cta-desc">Join local shops already on SearchMee. Free to start — upgrade anytime, no pressure.</p>
     </div>
-
-    <div class="city-block">
-      <div class="city-name">📍 Delhi <span style="font-size:14px;color:var(--g3);font-weight:400">(Coming soon)</span></div>
-      <div class="cat-grid">
-        <a href="/delhi/kirana-stores.html" class="cat-link"><span class="cat-icon">🛒</span> Kirana Stores in Delhi</a>
-        <a href="/delhi/medical-stores.html" class="cat-link"><span class="cat-icon">💊</span> Medical Stores in Delhi</a>
-        <a href="/delhi/electricians.html" class="cat-link"><span class="cat-icon">⚡</span> Electricians in Delhi</a>
-        <a href="/delhi/salons.html" class="cat-link"><span class="cat-icon">✂️</span> Salons in Delhi</a>
-        <a href="/delhi/restaurants.html" class="cat-link"><span class="cat-icon">🍽️</span> Restaurants in Delhi</a>
-        <a href="/delhi/mobile-repair.html" class="cat-link"><span class="cat-icon">📱</span> Mobile Repair in Delhi</a>
-        <a href="/delhi/hospitals.html" class="cat-link"><span class="cat-icon">🏥</span> Hospitals in Delhi</a>
-        <a href="/delhi/gyms.html" class="cat-link"><span class="cat-icon">💪</span> Gyms in Delhi</a>
-      </div>
-    </div>
-
-    <div class="city-block">
-      <div class="city-name">📍 Ghaziabad <span style="font-size:14px;color:var(--g3);font-weight:400">(Coming soon)</span></div>
-      <div class="cat-grid">
-        <a href="/ghaziabad/kirana-stores.html" class="cat-link"><span class="cat-icon">🛒</span> Kirana Stores in Ghaziabad</a>
-        <a href="/ghaziabad/medical-stores.html" class="cat-link"><span class="cat-icon">💊</span> Medical Stores in Ghaziabad</a>
-        <a href="/ghaziabad/electricians.html" class="cat-link"><span class="cat-icon">⚡</span> Electricians in Ghaziabad</a>
-        <a href="/ghaziabad/salons.html" class="cat-link"><span class="cat-icon">✂️</span> Salons in Ghaziabad</a>
-        <a href="/ghaziabad/restaurants.html" class="cat-link"><span class="cat-icon">🍽️</span> Restaurants in Ghaziabad</a>
-        <a href="/ghaziabad/mobile-repair.html" class="cat-link"><span class="cat-icon">📱</span> Mobile Repair in Ghaziabad</a>
-      </div>
+    <div class="cta-btns">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform" target="_blank" class="btn-cta-w">🏪 Register Your Shop Free</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform" target="_blank" class="btn-cta-o">🔔 Get Launch Notification</a>
     </div>
   </div>
-</section>
 
-<!-- NOTIFY ME -->
-<section class="section notify-section" id="notify">
-  <div class="section-inner">
-    <div class="notify-box">
-      <span class="notify-emoji">📱</span>
-      <div class="notify-title">App launch hone pe batao</div>
-      <div class="notify-sub">
-        Android app jaldi aa raha hai — pehle log mein shamil ho aur sabse pehle notification pao.
-      </div>
-      <div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform"
-           target="_blank" class="notify-btn-main">
-          🔔 Notify Me at Launch
-        </a>
-      </div>
-      <div class="notify-note"><span>✓ Koi spam nahi.</span> Sirf launch update milegi.</div>
-    </div>
-  </div>
-</section>
-
-<!-- SEO TEXT -->
-<section class="section seo-section">
-  <div class="section-inner">
-    <div class="seo-text">
-      <h2>Find Local Shops Near You with SearchMee</h2>
-      <p>SearchMee is India's upcoming local shop discovery app that helps you find nearby kirana stores, medical shops, salons, electricians, plumbers and more — all within 5 km of your location. Unlike large aggregator platforms, SearchMee focuses exclusively on hyperlocal discovery so you always find relevant shops in your neighbourhood.</p>
-      <h2>For Shop Owners — Register Your Business Free</h2>
-      <p>If you own a local business in Noida, Delhi, Ghaziabad or anywhere in India, you can register on SearchMee for free. Your shop will appear in search results when nearby customers look for your category of service. No commission per order, no monthly subscription needed to get started.</p>
-      <h2>Nearby Shops in Noida</h2>
-      <p>We are starting with Noida and expanding fast. Whether you need a kirana store in Sector 18, a medical shop in Sector 62, or an electrician in Greater Noida — SearchMee will show you verified, nearby options with one-tap calling. No need to search through dozens of results from other cities.</p>
-      <h2>Coming to Your City Soon</h2>
-      <p>SearchMee is currently onboarding shops in Noida. We will expand to Delhi, Ghaziabad, Greater Noida, Lucknow, Agra, Kanpur and other major cities across Uttar Pradesh and India. Register your shop now to be among the first verified businesses on the platform.</p>
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Search<span>Mee</span></div>
-  <div class="footer-links">
-    <a href="https://instagram.com/searchmee" target="_blank">Instagram</a>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-logo">Search<span>Mee</span></div>
+      <p class="footer-tagline">Apne paas, apni dukaan.<br>Made with ❤️ in India 🇮🇳</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/searchmee" target="_blank" class="social-pill">📸 Instagram</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Cities</div>
+      <a href="#">Noida — Live</a>
+      <a href="#">Delhi — Soon</a>
+      <a href="#">Ghaziabad — Soon</a>
+      <a href="#">Greater Noida — Soon</a>
+      <a href="#">Lucknow — Soon</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Categories</div>
+      <a href="https://www.searchmee.in/noida/kirana-stores.html">Kirana Stores</a>
+      <a href="https://www.searchmee.in/noida/medical-stores.html">Medical Shops</a>
+      <a href="https://www.searchmee.in/noida/electricians.html">Electricians</a>
+      <a href="https://www.searchmee.in/noida/salons.html">Salons</a>
+      <a href="https://www.searchmee.in/noida/restaurants.html">Restaurants</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform" target="_blank">Register Your Shop</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSehUDqLTR9LrLH-8tqXME7kdlg4otlTkqGXlxFgrHo1nZgJGg/viewform" target="_blank">Get Notified</a>
+      <a href="https://instagram.com/searchmee" target="_blank">Instagram</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Us</a>
+    </div>
   </div>
-  <div class="footer-note">© 2026 SearchMee. Apne paas, apni dukaan. Made with ❤️ in India.</div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 SearchMee. All rights reserved.</div>
+    <div class="footer-love">Made with ❤️ in India</div>
+  </div>
 </footer>
 
-<script>
-  // scroll-triggered fade-in for cards
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.step-card,.why-card,.plan-card,.notify-box').forEach((el,i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(22px)';
-    el.style.transition = `opacity .55s ease ${i*0.07}s, transform .55s ease ${i*0.07}s`;
-    obs.observe(el);
-  });
-</script>
 </body>
 </html>
