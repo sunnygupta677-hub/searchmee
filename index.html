@@ -576,14 +576,29 @@ footer {
 
   <!-- City bar -->
   <div class="city-bar">
-    <span class="city-label-txt">Expanding to</span>
-    <button class="city-chip active"><span class="live-dot"></span>Noida — Live</button>
-    <button class="city-chip"><span class="live-dot"></span>Delhi — Live</button>
-    <button class="city-chip"><span class="live-dot"></span>Ghaziabad — Live</button>
-    <button class="city-chip"><span class="live-dot"></span>Greater Noida — Live</button>
-    <button class="city-chip"><span class="live-dot"></span>Lucknow — Live</button>
-    <button class="city-chip"><span class="live-dot"></span>Agra — Live</button>
-  </div>
+    <button class="city-chip active" onclick="switchCity('noida')">
+    <span class="live-dot"></span>Noida — Live
+  </button>
+
+  <button class="city-chip" onclick="switchCity('delhi')">
+    <span class="live-dot"></span>Delhi — Live
+  </button>
+
+  <button class="city-chip" onclick="switchCity('ghaziabad')">
+    <span class="live-dot"></span>Ghaziabad — Live
+  </button>
+
+  <button class="city-chip">
+    <span class="live-dot"></span>Greater Noida — Live
+  </button>
+
+  <button class="city-chip">
+    <span class="live-dot"></span>Lucknow — Live
+  </button>
+
+  <button class="city-chip">
+    <span class="live-dot"></span>Agra — Live
+  </button>
 </div>
 
 <!-- MAIN CONTENT -->
