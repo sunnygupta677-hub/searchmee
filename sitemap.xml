@@ -1,47 +1,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://searchmee.in/</loc>
   </url>
 
-  <url>
-    <loc>https://searchmee.in/noida/kirana-stores.html</loc>
-  </url>
+  <!-- CITY PAGES -->
+  <url><loc>https://searchmee.in/noida/</loc></url>
+  <url><loc>https://searchmee.in/delhi/</loc></url>
+  <url><loc>https://searchmee.in/ghaziabad/</loc></url>
+  <url><loc>https://searchmee.in/greater-noida/</loc></url>
+  <url><loc>https://searchmee.in/lucknow/</loc></url>
+  <url><loc>https://searchmee.in/agra/</loc></url>
 
-  <url>
-    <loc>https://searchmee.in/noida/medical-stores.html</loc>
-  </url>
+  <!-- NOIDA -->
+  <url><loc>https://searchmee.in/noida/ac-repair.html</loc></url>
+  <url><loc>https://searchmee.in/noida/plumbers.html</loc></url>
+  <url><loc>https://searchmee.in/noida/electricians.html</loc></url>
+  <url><loc>https://searchmee.in/noida/mobile-repair.html</loc></url>
+  <url><loc>https://searchmee.in/noida/restaurants.html</loc></url>
 
-  <url>
-    <loc>https://searchmee.in/noida/electricians.html</loc>
-  </url>
+  <!-- DELHI -->
+  <url><loc>https://searchmee.in/delhi/ac-repair.html</loc></url>
+  <url><loc>https://searchmee.in/delhi/plumbers.html</loc></url>
+  <url><loc>https://searchmee.in/delhi/electricians.html</loc></url>
+  <url><loc>https://searchmee.in/delhi/mobile-repair.html</loc></url>
+  <url><loc>https://searchmee.in/delhi/restaurants.html</loc></url>
 
-  <url>
-    <loc>https://searchmee.in/noida/plumbers.html</loc>
-  </url>
+  <!-- GHAZIABAD -->
+  <url><loc>https://searchmee.in/ghaziabad/ac-repair.html</loc></url>
+  <url><loc>https://searchmee.in/ghaziabad/plumbers.html</loc></url>
+  <url><loc>https://searchmee.in/ghaziabad/electricians.html</loc></url>
+  <url><loc>https://searchmee.in/ghaziabad/mobile-repair.html</loc></url>
+  <url><loc>https://searchmee.in/ghaziabad/restaurants.html</loc></url>
 
-  <url>
-    <loc>https://searchmee.in/noida/ac-repair.html</loc>
-  </url>
+  <!-- GREATER NOIDA -->
+  <url><loc>https://searchmee.in/greater-noida/ac-repair.html</loc></url>
+  <url><loc>https://searchmee.in/greater-noida/plumbers.html</loc></url>
+  <url><loc>https://searchmee.in/greater-noida/electricians.html</loc></url>
+  <url><loc>https://searchmee.in/greater-noida/mobile-repair.html</loc></url>
+  <url><loc>https://searchmee.in/greater-noida/restaurants.html</loc></url>
 
-  <url>
-    <loc>https://searchmee.in/noida/salons.html</loc>
-  </url>
+  <!-- LUCKNOW -->
+  <url><loc>https://searchmee.in/lucknow/ac-repair.html</loc></url>
+  <url><loc>https://searchmee.in/lucknow/plumbers.html</loc></url>
+  <url><loc>https://searchmee.in/lucknow/electricians.html</loc></url>
+  <url><loc>https://searchmee.in/lucknow/mobile-repair.html</loc></url>
+  <url><loc>https://searchmee.in/lucknow/restaurants.html</loc></url>
 
-  <url>
-    <loc>https://searchmee.in/noida/restaurants.html</loc>
-  </url>
-
-  <url>
-    <loc>https://searchmee.in/noida/gyms.html</loc>
-  </url>
-
-  <url>
-    <loc>https://searchmee.in/noida/mobile-repair.html</loc>
-  </url>
-
-  <url>
-    <loc>https://searchmee.in/noida/electronics-shops.html</loc>
-  </url>
+  <!-- AGRA -->
+  <url><loc>https://searchmee.in/agra/ac-repair.html</loc></url>
+  <url><loc>https://searchmee.in/agra/plumbers.html</loc></url>
+  <url><loc>https://searchmee.in/agra/electricians.html</loc></url>
+  <url><loc>https://searchmee.in/agra/mobile-repair.html</loc></url>
+  <url><loc>https://searchmee.in/agra/restaurants.html</loc></url>
 
 </urlset>
