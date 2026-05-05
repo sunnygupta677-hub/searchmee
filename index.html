@@ -751,5 +751,20 @@ footer {
   </div>
 </footer>
 
+ <script>
+function switchCity(city) {
+
+  document.getElementById('noida-categories').style.display = 'none';
+  document.getElementById('delhi-categories').style.display = 'none';
+
+  if(city === 'delhi'){
+    document.getElementById('delhi-categories').style.display = 'flex';
+  } else {
+    document.getElementById('noida-categories').style.display = 'flex';
+  }
+
+}
+</script>
+</body> 
 </body>
 </html>
