@@ -8,6 +8,10 @@
 <meta name="keywords" content="nearby shops, shops near me, kirana store near me, medical store near me, local shops Noida, local shops Delhi, local shops Ghaziabad, local shops Lucknow, local shops Agra, dukaan near me, SearchMee">
 <meta name="robots" content="index, follow">
 <meta name="author" content="SearchMee">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://searchmee.in/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SearchMee">
@@ -19,7 +23,7 @@
 <meta name="twitter:title" content="SearchMee – Find Nearby Shops in India">
 <meta name="twitter:description" content="Discover local shops near you. Get the app on Google Play.">
 <meta name="twitter:image" content="https://searchmee.in/og-image.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SearchMee","url":"https://searchmee.in","description":"Find nearby shops and local services across India"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SearchMee","alternateName":["Searchmee","Search Mee","searchmee.in"],"url":"https://searchmee.in","description":"Find nearby shops and local services across India"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"SearchMee","url":"https://searchmee.in","logo":"https://searchmee.in/logo.png","email":"Searchmee001@gmail.com","sameAs":["https://instagram.com/searchmee.in","https://facebook.com/searchmee"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"SearchMee","operatingSystem":"ANDROID","applicationCategory":"LifestyleApplication","url":"https://play.google.com/store/apps/details?id=in.searchmee.app","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,6 +88,8 @@
   }
   nav.top .row { display: flex; align-items: center; justify-content: space-between; }
   .logo { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 21px; color: #fff; }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo img { border-radius: 9px; display: block; }
   .logo span { color: var(--orange); }
   .nav-links { display: flex; gap: 30px; }
   .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14.5px; font-weight: 500; }
@@ -328,6 +334,8 @@
   footer { margin-top: 70px; padding: 30px 0 calc(30px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); }
   .foot-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   .foot-brand { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 15px; }
+  .foot-brand { display: flex; align-items: center; gap: 8px; }
+  .foot-brand img { border-radius: 7px; display: block; }
   .foot-brand span { color: var(--orange); }
   .foot-links { display: flex; gap: 20px; }
   .foot-links a { color: var(--ink-soft); text-decoration: none; font-size: 13px; }
@@ -339,47 +347,92 @@
   .foot-cols a:hover, .foot-links a:hover { color: var(--orange); }
 
 
-  /* ---------- Browse by city (tabs) ---------- */
-  .bc-in { position: absolute; opacity: 0; pointer-events: none; }
-  .bc-tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 18px; scrollbar-width: none; }
-  .bc-tabs::-webkit-scrollbar { display: none; }
-  .bc-tabs label {
-    flex: 0 0 auto; cursor: pointer; font-size: 14px; font-weight: 600; padding: 9px 18px;
-    border-radius: 999px; border: 1px solid var(--line); color: var(--ink); background: transparent;
-    transition: background .15s, color .15s, border-color .15s;
-  }
-  .bc-tabs label:hover { border-color: var(--orange); }
-  .bc-in:focus-visible ~ .bc-tabs label { outline: none; }
-  .bc-panel { display: none; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  #bc-noida:checked ~ .bc-tabs label[for="bc-noida"] { background: var(--orange); border-color: var(--orange); color: #fff; }
-  #bc-noida:checked ~ .bc-panels .p-noida { display: grid; }
-  #bc-delhi:checked ~ .bc-tabs label[for="bc-delhi"] { background: var(--orange); border-color: var(--orange); color: #fff; }
-  #bc-delhi:checked ~ .bc-panels .p-delhi { display: grid; }
-  #bc-ghaziabad:checked ~ .bc-tabs label[for="bc-ghaziabad"] { background: var(--orange); border-color: var(--orange); color: #fff; }
-  #bc-ghaziabad:checked ~ .bc-panels .p-ghaziabad { display: grid; }
-  #bc-greater-noida:checked ~ .bc-tabs label[for="bc-greater-noida"] { background: var(--orange); border-color: var(--orange); color: #fff; }
-  #bc-greater-noida:checked ~ .bc-panels .p-greater-noida { display: grid; }
-  #bc-lucknow:checked ~ .bc-tabs label[for="bc-lucknow"] { background: var(--orange); border-color: var(--orange); color: #fff; }
-  #bc-lucknow:checked ~ .bc-panels .p-lucknow { display: grid; }
-  #bc-agra:checked ~ .bc-tabs label[for="bc-agra"] { background: var(--orange); border-color: var(--orange); color: #fff; }
-  #bc-agra:checked ~ .bc-panels .p-agra { display: grid; }
-  .bt {
-    display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink);
-    padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line);
-    background: color-mix(in srgb, var(--ink) 3%, transparent);
-    transition: transform .15s, border-color .15s;
-  }
-  .bt:hover { border-color: var(--orange); transform: translateY(-2px); }
-  .bt-ic { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 12px; background: var(--cream); display: grid; place-items: center; font-size: 20px; }
-  .bt-tx { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
-  .bt-tx b { font-size: 14px; font-weight: 600; }
-  .bt-tx small { font-size: 12px; color: var(--ink-soft); }
-  @media (max-width: 900px) { .bc-panel { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 640px) {
-    .bc-panel { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .bt { padding: 10px; gap: 9px; }
-    .bt-ic { width: 34px; height: 34px; font-size: 17px; border-radius: 10px; }
-    .bt-tx b { font-size: 13px; }
+
+  /* ---------- Footer: cities (SEO links, collapsed) ---------- */
+  .seo-more { margin-bottom: 22px; font-size: 13px; color: var(--ink-soft); }
+  .seo-more summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 8px; color: var(--ink-soft); }
+  .seo-more summary::-webkit-details-marker { display: none; }
+  .seo-more summary::after { content: "+"; font-weight: 700; color: var(--orange); }
+  .seo-more[open] summary::after { content: "–"; }
+  .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px 28px; margin-top: 16px; }
+  .seo-city h3 { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .seo-city p { font-size: 12px; line-height: 1.9; }
+  .seo-city a { color: var(--ink-soft); text-decoration: none; }
+  .seo-city a:hover { color: var(--orange); }
+
+  /* ---------- Partner view ---------- */
+  .pview { display: none; padding: 20px 0 30px; }
+  .pview:target { display: block; }
+  body:has(.pview:target) .home { display: none; }
+  .pv-in { max-width: 1000px; margin: 0 auto; padding: 0 22px; }
+  .pv-back { font-size: 14px; margin: 6px 0 18px; }
+  .pv-back a { color: var(--orange-deep); text-decoration: none; font-weight: 500; }
+  .p-hero { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-radius: 24px; padding: 38px 38px; color: #fff;
+    background: radial-gradient(circle at 85% 20%, rgba(255,107,53,.35), transparent 45%), linear-gradient(135deg, var(--navy-deep), var(--navy-soft)); }
+  .p-badge { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 15px; }
+  .p-badge b { color: var(--orange); font-weight: 600; }
+  .p-title { font-family: 'Poppins', sans-serif; font-size: clamp(30px, 5.2vw, 46px); line-height: 1.12; font-weight: 700; margin: 12px 0 10px; }
+  .p-title span { color: var(--orange); }
+  .p-sub { color: rgba(255,255,255,.82); font-size: 16px; max-width: 420px; margin-bottom: 22px; }
+  .p-mini { display: flex; flex-wrap: wrap; gap: 14px 22px; }
+  .p-mini div { display: flex; align-items: center; gap: 9px; font-size: 12.5px; line-height: 1.25; color: rgba(255,255,255,.9); }
+  .p-mini i { font-style: normal; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,.12); display: grid; place-items: center; font-size: 17px; color: var(--orange); font-weight: 700; }
+  .p-hero-art { flex: 0 0 auto; text-align: center; }
+  .p-pin { width: 150px; height: 150px; border-radius: 50%; background: rgba(255,255,255,.1); display: grid; place-items: center; margin: 0 auto 10px; }
+  .p-pin img { border-radius: 26px; display: block; }
+  .p-hero-art span { font-size: 14px; color: rgba(255,255,255,.8); font-style: italic; }
+  .p-h2 { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; margin: 42px 0 18px; }
+  .p-h2.sm { font-size: 22px; margin: 0 0 6px; }
+  .p-why { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .p-card { border-radius: 18px; padding: 20px; background: color-mix(in srgb, var(--ink) 4%, transparent); border: 1px solid var(--line); }
+  .p-card .ic { font-style: normal; width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 22px; margin-bottom: 14px; font-weight: 700; }
+  .ic.o { background: var(--cream); color: var(--orange-deep); }
+  .ic.g { background: color-mix(in srgb, var(--green) 16%, transparent); }
+  .ic.b { background: color-mix(in srgb, #6366F1 16%, transparent); }
+  .p-card h3 { font-family: 'Poppins', sans-serif; font-size: 16px; margin-bottom: 4px; }
+  .p-card p { color: var(--ink-soft); font-size: 14px; line-height: 1.5; }
+  .p-calc { margin-top: 42px; background: var(--cream); border-radius: 24px; padding: 30px; }
+  .pc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 22px; }
+  .pc-mut { color: var(--ink-soft); font-size: 15px; }
+  .pc-art { text-align: center; color: var(--orange-deep); font-size: 12px; font-weight: 600; line-height: 1.3; }
+  .pc-art span { display: block; font-size: 40px; margin-bottom: 2px; }
+  .pc-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+  .pc-row label { font-size: 17px; font-weight: 500; }
+  .pc-row input { width: 100px; padding: 9px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--cream-light); color: var(--ink); font: 600 18px 'Inter', sans-serif; text-align: center; }
+  .pc-range { width: 100%; accent-color: var(--orange); height: 24px; }
+  .pc-ticks { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--ink-soft); margin: 2px 0 22px; }
+  .pc-res { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: stretch; }
+  .pc-earn small, .pc-goal small { color: var(--ink-soft); font-size: 13.5px; display: block; }
+  .pc-amt { font-family: 'Poppins', sans-serif; color: var(--orange-deep); font-size: 40px; font-weight: 700; line-height: 1.15; margin: 4px 0 6px; }
+  .pc-amt span { font-size: 15px; color: var(--ink-soft); font-weight: 500; }
+  .pc-goal { border-radius: 16px; padding: 16px; background: color-mix(in srgb, var(--green) 14%, transparent); }
+  .pc-goal strong { color: #15803D; font-size: 16px; display: block; margin-bottom: 4px; }
+  .pc-goal b { color: #15803D; font-size: 16px; display: block; margin-top: 8px; }
+  .pc-note { font-size: 12.5px; color: var(--ink-soft); margin: 14px 0 18px; }
+  .pc-btn { display: flex; align-items: center; gap: 14px; text-decoration: none; border-radius: 16px; padding: 16px 20px; margin-top: 12px; }
+  .pc-btn .pc-ico { font-size: 22px; }
+  .pc-btn span:nth-child(2) { flex: 1; display: flex; flex-direction: column; line-height: 1.3; }
+  .pc-btn b { font-size: 17px; font-weight: 600; }
+  .pc-btn small { font-size: 13.5px; opacity: .85; }
+  .pc-btn em { font-style: normal; font-size: 20px; }
+  .pc-btn.main { background: var(--orange); color: #fff; }
+  .pc-btn.main:hover { background: var(--orange-deep); }
+  .pc-btn.wa { border: 1.5px solid #15803D; color: #15803D; }
+  .pc-btn.wa:hover { background: color-mix(in srgb, var(--green) 12%, transparent); }
+  .p-faq details { border-bottom: 1px solid var(--line); padding: 16px 0; }
+  .p-faq summary { cursor: pointer; font-size: 17px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; gap: 14px; }
+  .p-faq summary::-webkit-details-marker { display: none; }
+  .p-faq summary::after { content: "⌄"; color: var(--ink-soft); font-size: 22px; line-height: 1; }
+  .p-faq details[open] summary::after { content: "⌃"; }
+  .p-faq p { color: var(--ink-soft); font-size: 15px; margin-top: 10px; max-width: 640px; }
+  @media (max-width: 800px) {
+    .p-why { grid-template-columns: repeat(2, 1fr); }
+    .p-hero { flex-direction: column; align-items: flex-start; padding: 28px 22px; }
+    .p-hero-art { display: none; }
+    .p-calc { padding: 22px 18px; }
+    .pc-res { grid-template-columns: 1fr; }
+    .pc-row label { font-size: 16px; }
+    .pc-amt { font-size: 36px; }
   }
 
   /* ---------- Legal views (Privacy Policy / Delete Account) ---------- */
@@ -387,7 +440,7 @@
   .legal:target { display: block; }
   body:has(.legal:target) .home { display: none; }
   .legal-in { max-width: 820px; margin: 0 auto; padding: 0 22px; }
-  .legal h1 { font-family: 'Poppins', sans-serif; font-size: clamp(28px,5vw,38px); margin: 26px 0 6px; line-height: 1.2; }
+  .legal .lh { font-family: 'Poppins', sans-serif; font-size: clamp(28px,5vw,38px); margin: 26px 0 6px; line-height: 1.2; }
   .legal .meta { color: var(--ink-soft); font-size: 14px; margin: 0 0 22px; }
   .legal .card { background: var(--cream-light); border: 1px solid var(--line); border-radius: 18px; padding: 24px; margin-bottom: 16px; }
   .legal .card h2 { font-family: 'Poppins', sans-serif; font-size: 18px; margin: 0 0 10px; }
@@ -406,11 +459,11 @@
 
 <nav class="top">
   <div class="wrap row">
-    <div class="logo">Search<span>Mee</span></div>
+    <div class="logo"><img src="logo-96.png" alt="SearchMee logo" width="36" height="36"><div class="lt">Search<span>Mee</span></div></div>
     <div class="nav-links">
       <a href="#categories">Categories</a>
       <a href="#why">Why SearchMee</a>
-      <a href="#browse">Browse by city</a>
+      <a href="#partner">Partner with us</a>
       <a href="#download">Download</a>
     </div>
     <a class="nav-cta" href="#download">Get the App →</a>
@@ -499,20 +552,6 @@
   </div>
 </section>
 
-<section class="browse" id="browse">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Find shops in your city</h2>
-      <span class="tag">20 types of shops &amp; services in 6 cities</span>
-    </div>
-    <div class="bc">
-      <input type="radio" name="bcity" id="bc-noida" class="bc-in" checked><input type="radio" name="bcity" id="bc-delhi" class="bc-in"><input type="radio" name="bcity" id="bc-ghaziabad" class="bc-in"><input type="radio" name="bcity" id="bc-greater-noida" class="bc-in"><input type="radio" name="bcity" id="bc-lucknow" class="bc-in"><input type="radio" name="bcity" id="bc-agra" class="bc-in">
-      <div class="bc-tabs"><label for="bc-noida">Noida</label><label for="bc-delhi">Delhi</label><label for="bc-ghaziabad">Ghaziabad</label><label for="bc-greater-noida">Greater Noida</label><label for="bc-lucknow">Lucknow</label><label for="bc-agra">Agra</label></div>
-      <div class="bc-panels"><div class="bc-panel p-noida"><a class="bt" href="https://www.searchmee.in/noida/kirana-stores.html" title="Kirana Stores in Noida"><span class="bt-ic">🛒</span><span class="bt-tx"><b>Kirana Stores</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/medical-stores.html" title="Medical Shops in Noida"><span class="bt-ic">💊</span><span class="bt-tx"><b>Medical Shops</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/electricians.html" title="Electricians in Noida"><span class="bt-ic">⚡</span><span class="bt-tx"><b>Electricians</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/plumbers.html" title="Plumbers in Noida"><span class="bt-ic">🔧</span><span class="bt-tx"><b>Plumbers</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/ac-repair.html" title="AC Repair in Noida"><span class="bt-ic">❄️</span><span class="bt-tx"><b>AC Repair</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/salons.html" title="Salons in Noida"><span class="bt-ic">✂️</span><span class="bt-tx"><b>Salons</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/restaurants.html" title="Restaurants in Noida"><span class="bt-ic">🍽️</span><span class="bt-tx"><b>Restaurants</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/gyms.html" title="Gyms in Noida"><span class="bt-ic">💪</span><span class="bt-tx"><b>Gyms</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/mobile-repair.html" title="Mobile Repair in Noida"><span class="bt-ic">📱</span><span class="bt-tx"><b>Mobile Repair</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/car-repair.html" title="Car Repair in Noida"><span class="bt-ic">🚗</span><span class="bt-tx"><b>Car Repair</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/bike-repair.html" title="Bike Repair in Noida"><span class="bt-ic">🏍️</span><span class="bt-tx"><b>Bike Repair</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/hospitals.html" title="Hospitals in Noida"><span class="bt-ic">🏥</span><span class="bt-tx"><b>Hospitals</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/coaching-centres.html" title="Coaching in Noida"><span class="bt-ic">📚</span><span class="bt-tx"><b>Coaching</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/jewellery.html" title="Jewellery in Noida"><span class="bt-ic">💍</span><span class="bt-tx"><b>Jewellery</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/pet-shops.html" title="Pet Shops in Noida"><span class="bt-ic">🐾</span><span class="bt-tx"><b>Pet Shops</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/furniture-shops.html" title="Furniture in Noida"><span class="bt-ic">🛋️</span><span class="bt-tx"><b>Furniture</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/sweet-shops.html" title="Sweet Shops in Noida"><span class="bt-ic">🍬</span><span class="bt-tx"><b>Sweet Shops</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/hardware-stores.html" title="Hardware in Noida"><span class="bt-ic">🔩</span><span class="bt-tx"><b>Hardware</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/computer-repair.html" title="Computer in Noida"><span class="bt-ic">💻</span><span class="bt-tx"><b>Computer</b><small>in Noida</small></span></a><a class="bt" href="https://www.searchmee.in/noida/pg-hostel.html" title="PG &amp; Hostel in Noida"><span class="bt-ic">🏠</span><span class="bt-tx"><b>PG &amp; Hostel</b><small>in Noida</small></span></a></div><div class="bc-panel p-delhi"><a class="bt" href="https://www.searchmee.in/delhi/kirana-stores.html" title="Kirana Stores in Delhi"><span class="bt-ic">🛒</span><span class="bt-tx"><b>Kirana Stores</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/medical-stores.html" title="Medical Shops in Delhi"><span class="bt-ic">💊</span><span class="bt-tx"><b>Medical Shops</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/electricians.html" title="Electricians in Delhi"><span class="bt-ic">⚡</span><span class="bt-tx"><b>Electricians</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/plumbers.html" title="Plumbers in Delhi"><span class="bt-ic">🔧</span><span class="bt-tx"><b>Plumbers</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/ac-repair.html" title="AC Repair in Delhi"><span class="bt-ic">❄️</span><span class="bt-tx"><b>AC Repair</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/salons.html" title="Salons in Delhi"><span class="bt-ic">✂️</span><span class="bt-tx"><b>Salons</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/restaurants.html" title="Restaurants in Delhi"><span class="bt-ic">🍽️</span><span class="bt-tx"><b>Restaurants</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/gyms.html" title="Gyms in Delhi"><span class="bt-ic">💪</span><span class="bt-tx"><b>Gyms</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/mobile-repair.html" title="Mobile Repair in Delhi"><span class="bt-ic">📱</span><span class="bt-tx"><b>Mobile Repair</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/car-repair.html" title="Car Repair in Delhi"><span class="bt-ic">🚗</span><span class="bt-tx"><b>Car Repair</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/bike-repair.html" title="Bike Repair in Delhi"><span class="bt-ic">🏍️</span><span class="bt-tx"><b>Bike Repair</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/hospitals.html" title="Hospitals in Delhi"><span class="bt-ic">🏥</span><span class="bt-tx"><b>Hospitals</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/coaching-centres.html" title="Coaching in Delhi"><span class="bt-ic">📚</span><span class="bt-tx"><b>Coaching</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/jewellery.html" title="Jewellery in Delhi"><span class="bt-ic">💍</span><span class="bt-tx"><b>Jewellery</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/pet-shops.html" title="Pet Shops in Delhi"><span class="bt-ic">🐾</span><span class="bt-tx"><b>Pet Shops</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/furniture-shops.html" title="Furniture in Delhi"><span class="bt-ic">🛋️</span><span class="bt-tx"><b>Furniture</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/sweet-shops.html" title="Sweet Shops in Delhi"><span class="bt-ic">🍬</span><span class="bt-tx"><b>Sweet Shops</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/hardware-stores.html" title="Hardware in Delhi"><span class="bt-ic">🔩</span><span class="bt-tx"><b>Hardware</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/computer-repair.html" title="Computer in Delhi"><span class="bt-ic">💻</span><span class="bt-tx"><b>Computer</b><small>in Delhi</small></span></a><a class="bt" href="https://www.searchmee.in/delhi/pg-hostel.html" title="PG &amp; Hostel in Delhi"><span class="bt-ic">🏠</span><span class="bt-tx"><b>PG &amp; Hostel</b><small>in Delhi</small></span></a></div><div class="bc-panel p-ghaziabad"><a class="bt" href="https://www.searchmee.in/ghaziabad/kirana-stores.html" title="Kirana Stores in Ghaziabad"><span class="bt-ic">🛒</span><span class="bt-tx"><b>Kirana Stores</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/medical-stores.html" title="Medical Shops in Ghaziabad"><span class="bt-ic">💊</span><span class="bt-tx"><b>Medical Shops</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/electricians.html" title="Electricians in Ghaziabad"><span class="bt-ic">⚡</span><span class="bt-tx"><b>Electricians</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/plumbers.html" title="Plumbers in Ghaziabad"><span class="bt-ic">🔧</span><span class="bt-tx"><b>Plumbers</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/ac-repair.html" title="AC Repair in Ghaziabad"><span class="bt-ic">❄️</span><span class="bt-tx"><b>AC Repair</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/salons.html" title="Salons in Ghaziabad"><span class="bt-ic">✂️</span><span class="bt-tx"><b>Salons</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/restaurants.html" title="Restaurants in Ghaziabad"><span class="bt-ic">🍽️</span><span class="bt-tx"><b>Restaurants</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/gyms.html" title="Gyms in Ghaziabad"><span class="bt-ic">💪</span><span class="bt-tx"><b>Gyms</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/mobile-repair.html" title="Mobile Repair in Ghaziabad"><span class="bt-ic">📱</span><span class="bt-tx"><b>Mobile Repair</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/car-repair.html" title="Car Repair in Ghaziabad"><span class="bt-ic">🚗</span><span class="bt-tx"><b>Car Repair</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/bike-repair.html" title="Bike Repair in Ghaziabad"><span class="bt-ic">🏍️</span><span class="bt-tx"><b>Bike Repair</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/hospitals.html" title="Hospitals in Ghaziabad"><span class="bt-ic">🏥</span><span class="bt-tx"><b>Hospitals</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/coaching-centres.html" title="Coaching in Ghaziabad"><span class="bt-ic">📚</span><span class="bt-tx"><b>Coaching</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/jewellery.html" title="Jewellery in Ghaziabad"><span class="bt-ic">💍</span><span class="bt-tx"><b>Jewellery</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/pet-shops.html" title="Pet Shops in Ghaziabad"><span class="bt-ic">🐾</span><span class="bt-tx"><b>Pet Shops</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/furniture-shops.html" title="Furniture in Ghaziabad"><span class="bt-ic">🛋️</span><span class="bt-tx"><b>Furniture</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/sweet-shops.html" title="Sweet Shops in Ghaziabad"><span class="bt-ic">🍬</span><span class="bt-tx"><b>Sweet Shops</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/hardware-stores.html" title="Hardware in Ghaziabad"><span class="bt-ic">🔩</span><span class="bt-tx"><b>Hardware</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/computer-repair.html" title="Computer in Ghaziabad"><span class="bt-ic">💻</span><span class="bt-tx"><b>Computer</b><small>in Ghaziabad</small></span></a><a class="bt" href="https://www.searchmee.in/ghaziabad/pg-hostel.html" title="PG &amp; Hostel in Ghaziabad"><span class="bt-ic">🏠</span><span class="bt-tx"><b>PG &amp; Hostel</b><small>in Ghaziabad</small></span></a></div><div class="bc-panel p-greater-noida"><a class="bt" href="https://www.searchmee.in/greater-noida/kirana-stores.html" title="Kirana Stores in Greater Noida"><span class="bt-ic">🛒</span><span class="bt-tx"><b>Kirana Stores</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/medical-stores.html" title="Medical Shops in Greater Noida"><span class="bt-ic">💊</span><span class="bt-tx"><b>Medical Shops</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/electricians.html" title="Electricians in Greater Noida"><span class="bt-ic">⚡</span><span class="bt-tx"><b>Electricians</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/plumbers.html" title="Plumbers in Greater Noida"><span class="bt-ic">🔧</span><span class="bt-tx"><b>Plumbers</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/ac-repair.html" title="AC Repair in Greater Noida"><span class="bt-ic">❄️</span><span class="bt-tx"><b>AC Repair</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/salons.html" title="Salons in Greater Noida"><span class="bt-ic">✂️</span><span class="bt-tx"><b>Salons</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/restaurants.html" title="Restaurants in Greater Noida"><span class="bt-ic">🍽️</span><span class="bt-tx"><b>Restaurants</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/gyms.html" title="Gyms in Greater Noida"><span class="bt-ic">💪</span><span class="bt-tx"><b>Gyms</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/mobile-repair.html" title="Mobile Repair in Greater Noida"><span class="bt-ic">📱</span><span class="bt-tx"><b>Mobile Repair</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/car-repair.html" title="Car Repair in Greater Noida"><span class="bt-ic">🚗</span><span class="bt-tx"><b>Car Repair</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/bike-repair.html" title="Bike Repair in Greater Noida"><span class="bt-ic">🏍️</span><span class="bt-tx"><b>Bike Repair</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/hospitals.html" title="Hospitals in Greater Noida"><span class="bt-ic">🏥</span><span class="bt-tx"><b>Hospitals</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/coaching-centres.html" title="Coaching in Greater Noida"><span class="bt-ic">📚</span><span class="bt-tx"><b>Coaching</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/jewellery.html" title="Jewellery in Greater Noida"><span class="bt-ic">💍</span><span class="bt-tx"><b>Jewellery</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/pet-shops.html" title="Pet Shops in Greater Noida"><span class="bt-ic">🐾</span><span class="bt-tx"><b>Pet Shops</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/furniture-shops.html" title="Furniture in Greater Noida"><span class="bt-ic">🛋️</span><span class="bt-tx"><b>Furniture</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/sweet-shops.html" title="Sweet Shops in Greater Noida"><span class="bt-ic">🍬</span><span class="bt-tx"><b>Sweet Shops</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/hardware-stores.html" title="Hardware in Greater Noida"><span class="bt-ic">🔩</span><span class="bt-tx"><b>Hardware</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/computer-repair.html" title="Computer in Greater Noida"><span class="bt-ic">💻</span><span class="bt-tx"><b>Computer</b><small>in Greater Noida</small></span></a><a class="bt" href="https://www.searchmee.in/greater-noida/pg-hostel.html" title="PG &amp; Hostel in Greater Noida"><span class="bt-ic">🏠</span><span class="bt-tx"><b>PG &amp; Hostel</b><small>in Greater Noida</small></span></a></div><div class="bc-panel p-lucknow"><a class="bt" href="https://www.searchmee.in/lucknow/kirana-stores.html" title="Kirana Stores in Lucknow"><span class="bt-ic">🛒</span><span class="bt-tx"><b>Kirana Stores</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/medical-stores.html" title="Medical Shops in Lucknow"><span class="bt-ic">💊</span><span class="bt-tx"><b>Medical Shops</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/electricians.html" title="Electricians in Lucknow"><span class="bt-ic">⚡</span><span class="bt-tx"><b>Electricians</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/plumbers.html" title="Plumbers in Lucknow"><span class="bt-ic">🔧</span><span class="bt-tx"><b>Plumbers</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/ac-repair.html" title="AC Repair in Lucknow"><span class="bt-ic">❄️</span><span class="bt-tx"><b>AC Repair</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/salons.html" title="Salons in Lucknow"><span class="bt-ic">✂️</span><span class="bt-tx"><b>Salons</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/restaurants.html" title="Restaurants in Lucknow"><span class="bt-ic">🍽️</span><span class="bt-tx"><b>Restaurants</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/gyms.html" title="Gyms in Lucknow"><span class="bt-ic">💪</span><span class="bt-tx"><b>Gyms</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/mobile-repair.html" title="Mobile Repair in Lucknow"><span class="bt-ic">📱</span><span class="bt-tx"><b>Mobile Repair</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/car-repair.html" title="Car Repair in Lucknow"><span class="bt-ic">🚗</span><span class="bt-tx"><b>Car Repair</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/bike-repair.html" title="Bike Repair in Lucknow"><span class="bt-ic">🏍️</span><span class="bt-tx"><b>Bike Repair</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/hospitals.html" title="Hospitals in Lucknow"><span class="bt-ic">🏥</span><span class="bt-tx"><b>Hospitals</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/coaching-centres.html" title="Coaching in Lucknow"><span class="bt-ic">📚</span><span class="bt-tx"><b>Coaching</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/jewellery.html" title="Jewellery in Lucknow"><span class="bt-ic">💍</span><span class="bt-tx"><b>Jewellery</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/pet-shops.html" title="Pet Shops in Lucknow"><span class="bt-ic">🐾</span><span class="bt-tx"><b>Pet Shops</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/furniture-shops.html" title="Furniture in Lucknow"><span class="bt-ic">🛋️</span><span class="bt-tx"><b>Furniture</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/sweet-shops.html" title="Sweet Shops in Lucknow"><span class="bt-ic">🍬</span><span class="bt-tx"><b>Sweet Shops</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/hardware-stores.html" title="Hardware in Lucknow"><span class="bt-ic">🔩</span><span class="bt-tx"><b>Hardware</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/computer-repair.html" title="Computer in Lucknow"><span class="bt-ic">💻</span><span class="bt-tx"><b>Computer</b><small>in Lucknow</small></span></a><a class="bt" href="https://www.searchmee.in/lucknow/pg-hostel.html" title="PG &amp; Hostel in Lucknow"><span class="bt-ic">🏠</span><span class="bt-tx"><b>PG &amp; Hostel</b><small>in Lucknow</small></span></a></div><div class="bc-panel p-agra"><a class="bt" href="https://www.searchmee.in/agra/kirana-stores.html" title="Kirana Stores in Agra"><span class="bt-ic">🛒</span><span class="bt-tx"><b>Kirana Stores</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/medical-stores.html" title="Medical Shops in Agra"><span class="bt-ic">💊</span><span class="bt-tx"><b>Medical Shops</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/electricians.html" title="Electricians in Agra"><span class="bt-ic">⚡</span><span class="bt-tx"><b>Electricians</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/plumbers.html" title="Plumbers in Agra"><span class="bt-ic">🔧</span><span class="bt-tx"><b>Plumbers</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/ac-repair.html" title="AC Repair in Agra"><span class="bt-ic">❄️</span><span class="bt-tx"><b>AC Repair</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/salons.html" title="Salons in Agra"><span class="bt-ic">✂️</span><span class="bt-tx"><b>Salons</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/restaurants.html" title="Restaurants in Agra"><span class="bt-ic">🍽️</span><span class="bt-tx"><b>Restaurants</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/gyms.html" title="Gyms in Agra"><span class="bt-ic">💪</span><span class="bt-tx"><b>Gyms</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/mobile-repair.html" title="Mobile Repair in Agra"><span class="bt-ic">📱</span><span class="bt-tx"><b>Mobile Repair</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/car-repair.html" title="Car Repair in Agra"><span class="bt-ic">🚗</span><span class="bt-tx"><b>Car Repair</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/bike-repair.html" title="Bike Repair in Agra"><span class="bt-ic">🏍️</span><span class="bt-tx"><b>Bike Repair</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/hospitals.html" title="Hospitals in Agra"><span class="bt-ic">🏥</span><span class="bt-tx"><b>Hospitals</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/coaching-centres.html" title="Coaching in Agra"><span class="bt-ic">📚</span><span class="bt-tx"><b>Coaching</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/jewellery.html" title="Jewellery in Agra"><span class="bt-ic">💍</span><span class="bt-tx"><b>Jewellery</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/pet-shops.html" title="Pet Shops in Agra"><span class="bt-ic">🐾</span><span class="bt-tx"><b>Pet Shops</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/furniture-shops.html" title="Furniture in Agra"><span class="bt-ic">🛋️</span><span class="bt-tx"><b>Furniture</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/sweet-shops.html" title="Sweet Shops in Agra"><span class="bt-ic">🍬</span><span class="bt-tx"><b>Sweet Shops</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/hardware-stores.html" title="Hardware in Agra"><span class="bt-ic">🔩</span><span class="bt-tx"><b>Hardware</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/computer-repair.html" title="Computer in Agra"><span class="bt-ic">💻</span><span class="bt-tx"><b>Computer</b><small>in Agra</small></span></a><a class="bt" href="https://www.searchmee.in/agra/pg-hostel.html" title="PG &amp; Hostel in Agra"><span class="bt-ic">🏠</span><span class="bt-tx"><b>PG &amp; Hostel</b><small>in Agra</small></span></a></div></div>
-    </div>
-  </div>
-</section>
-
 <section class="wrap">
   <div class="cta-band">
     <div>
@@ -531,7 +570,7 @@
 <section class="legal" id="privacy-policy">
 <div class="legal-in">
 <p class="meta"><a href="#">← Back to home</a></p>
-<h1>Privacy Policy</h1>
+<h2 class="lh">Privacy Policy</h2>
 <p class="meta">SearchMee · Last Updated: 24 October 2026</p>
 
 <div class="card">
@@ -617,7 +656,7 @@
 <section class="legal" id="delete-account">
 <div class="legal-in">
 <p class="meta"><a href="#">← Back to home</a></p>
-<h1>Delete Your SearchMee Account</h1>
+<h2 class="lh">Delete Your SearchMee Account</h2>
 <p class="meta">App: SearchMee (Android) · Developer: SearchMee</p>
 
 <div class="note">Account deletion is available <strong>inside the SearchMee app</strong>. It is not available on the website, because your account is managed from the app.</div>
@@ -653,17 +692,87 @@
 <div class="card">
 <h2>Can’t access the app?</h2>
 <p>If you can no longer open the app or log in, email us from your registered contact details at <a href="mailto:Searchmee001@gmail.com?subject=Account%20Deletion%20Request">Searchmee001@gmail.com</a> with the subject <strong>“Account Deletion Request”</strong>, and include the mobile number linked to your account. We will verify the request and process it.</p>
-<p>For details on how we handle your data, see our <a href="#privacy-policy">Privacy Policy</a>.</p>
+<p>For details on how we handle your data, see our <a href="#partner">Partner with us</a>
+      <a href="#privacy-policy">Privacy Policy</a>.</p>
 </div>
+</div>
+</section>
+
+<section class="pview" id="partner">
+<div class="pv-in">
+  <p class="pv-back"><a href="#">← Back to home</a></p>
+
+  <div class="p-hero">
+    <div class="p-hero-copy">
+      <span class="p-badge">Search<b>Mee</b> Partner</span>
+      <h2 class="p-title">Be a Part of Something <span>Bigger</span></h2>
+      <p class="p-sub">Help local businesses grow and earn attractive commission with SearchMee.</p>
+      <div class="p-mini">
+        <div><i>₹</i><span>Earn<br>Commission</span></div>
+        <div><i>🏪</i><span>Support Local<br>Businesses</span></div>
+        <div><i>🕐</i><span>Work<br>Anytime</span></div>
+        <div><i>📈</i><span>Grow Your<br>Income</span></div>
+      </div>
+    </div>
+    <div class="p-hero-art" aria-hidden="true"><div class="p-pin"><img src="logo.png" alt="" width="120" height="120"></div><span>Be a Local Hero</span></div>
+  </div>
+
+  <h2 class="p-h2">Why Become a SearchMee Partner?</h2>
+  <div class="p-why">
+    <div class="p-card"><i class="ic o">₹</i><h3>₹75 per Paid Listing</h3><p>Earn commission on every successful paid listing.</p></div>
+    <div class="p-card"><i class="ic o">🏪</i><h3>No Investment</h3><p>Join for free and start earning.</p></div>
+    <div class="p-card"><i class="ic g">🕐</i><h3>Work Anytime</h3><p>On your terms, from anywhere.</p></div>
+    <div class="p-card"><i class="ic b">👥</i><h3>Build Your Future</h3><p>Be part of a growing network and earn more.</p></div>
+  </div>
+
+  <div class="p-calc">
+    <div class="pc-top">
+      <div>
+        <h2 class="p-h2 sm">See How Your Earnings Work</h2>
+        <p class="pc-mut">Calculate your potential earnings</p>
+      </div>
+      <div class="pc-art"><span>📊</span><small>More Listings<br>More Earnings</small></div>
+    </div>
+
+    <div class="pc-row"><label for="pc-n">Paid Listings Per Month</label><input id="pc-n" type="number" min="0" max="5000" value="500" inputmode="numeric"></div>
+    <input id="pc-r" class="pc-range" type="range" min="0" max="1500" step="10" value="500" aria-label="Paid listings per month">
+    <div class="pc-ticks"><span>0</span><span>250</span><span>500</span><span>750</span><span>1,000</span><span>1,500</span></div>
+
+    <div class="pc-res">
+      <div class="pc-earn">
+        <small>Your Estimated Earnings</small>
+        <div class="pc-amt">₹<b id="pc-out">37,500</b><span> / month</span></div>
+        <small>₹75 commission per successful paid listing</small>
+      </div>
+      <div class="pc-goal">
+        <strong>🏆 Want to earn ₹1 Lakh+?</strong>
+        <small>Reach approximately 1334 successful paid listings</small>
+        <b>1334 × ₹75 ≈ ₹1,00,000</b>
+      </div>
+    </div>
+    <p class="pc-note">Estimate only. Actual earnings depend on the number of listings verified as paid.</p>
+
+    <a class="pc-btn main" href="https://docs.google.com/forms/d/e/1FAIpQLSf4g3jPssG8MmMeReeF3XZ4jb9AZf01_C_1dTUe_ZjRJbZfEw/viewform?usp=sharing&ouid=117973489758849064563" target="_blank" rel="noopener"><span class="pc-ico">📄</span><span><b>Become a Partner</b><small>Fill a quick form to get started</small></span><em>→</em></a>
+    <a class="pc-btn wa" href="https://wa.me/918800414239?text=Hi%20SearchMee%2C%20I%20want%20to%20know%20about%20the%20Partner%20program" target="_blank" rel="noopener"><span class="pc-ico">💬</span><span><b>Have Questions? Chat on WhatsApp</b></span><em>→</em></a>
+  </div>
+
+  <h2 class="p-h2">Frequently Asked Questions</h2>
+  <div class="p-faq">
+    <details><summary>What is required to join as a SearchMee Partner?</summary><p>Just a smartphone and willingness to onboard local businesses in your area — no investment needed.</p></details>
+    <details><summary>When and how will I receive my commission?</summary><p>Commission is credited monthly to your registered bank account/UPI once listings are verified as paid.</p></details>
+  </div>
 </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="foot-cols"><a href="https://www.searchmee.in/noida/kirana-stores.html">Shops in Noida</a><a href="https://www.searchmee.in/delhi/kirana-stores.html">Shops in Delhi</a><a href="https://www.searchmee.in/ghaziabad/kirana-stores.html">Shops in Ghaziabad</a><a href="https://www.searchmee.in/greater-noida/kirana-stores.html">Shops in Greater Noida</a><a href="https://www.searchmee.in/lucknow/kirana-stores.html">Shops in Lucknow</a><a href="https://www.searchmee.in/agra/kirana-stores.html">Shops in Agra</a></div>
+    <details class="seo-more">
+      <summary>Available in Noida, Delhi, Ghaziabad, Greater Noida, Lucknow &amp; Agra</summary>
+      <div class="seo-grid"><div class="seo-city"><h3>Noida</h3><p><a href="https://www.searchmee.in/noida/kirana-stores.html">Kirana Stores in Noida</a> · <a href="https://www.searchmee.in/noida/medical-stores.html">Medical Shops in Noida</a> · <a href="https://www.searchmee.in/noida/electricians.html">Electricians in Noida</a> · <a href="https://www.searchmee.in/noida/plumbers.html">Plumbers in Noida</a> · <a href="https://www.searchmee.in/noida/ac-repair.html">AC Repair in Noida</a> · <a href="https://www.searchmee.in/noida/salons.html">Salons in Noida</a> · <a href="https://www.searchmee.in/noida/restaurants.html">Restaurants in Noida</a> · <a href="https://www.searchmee.in/noida/gyms.html">Gyms in Noida</a> · <a href="https://www.searchmee.in/noida/mobile-repair.html">Mobile Repair in Noida</a> · <a href="https://www.searchmee.in/noida/car-repair.html">Car Repair in Noida</a> · <a href="https://www.searchmee.in/noida/bike-repair.html">Bike Repair in Noida</a> · <a href="https://www.searchmee.in/noida/hospitals.html">Hospitals in Noida</a> · <a href="https://www.searchmee.in/noida/coaching-centres.html">Coaching in Noida</a> · <a href="https://www.searchmee.in/noida/jewellery.html">Jewellery in Noida</a> · <a href="https://www.searchmee.in/noida/pet-shops.html">Pet Shops in Noida</a> · <a href="https://www.searchmee.in/noida/furniture-shops.html">Furniture in Noida</a> · <a href="https://www.searchmee.in/noida/sweet-shops.html">Sweet Shops in Noida</a> · <a href="https://www.searchmee.in/noida/hardware-stores.html">Hardware in Noida</a> · <a href="https://www.searchmee.in/noida/computer-repair.html">Computer in Noida</a> · <a href="https://www.searchmee.in/noida/pg-hostel.html">PG &amp; Hostel in Noida</a></p></div><div class="seo-city"><h3>Delhi</h3><p><a href="https://www.searchmee.in/delhi/kirana-stores.html">Kirana Stores in Delhi</a> · <a href="https://www.searchmee.in/delhi/medical-stores.html">Medical Shops in Delhi</a> · <a href="https://www.searchmee.in/delhi/electricians.html">Electricians in Delhi</a> · <a href="https://www.searchmee.in/delhi/plumbers.html">Plumbers in Delhi</a> · <a href="https://www.searchmee.in/delhi/ac-repair.html">AC Repair in Delhi</a> · <a href="https://www.searchmee.in/delhi/salons.html">Salons in Delhi</a> · <a href="https://www.searchmee.in/delhi/restaurants.html">Restaurants in Delhi</a> · <a href="https://www.searchmee.in/delhi/gyms.html">Gyms in Delhi</a> · <a href="https://www.searchmee.in/delhi/mobile-repair.html">Mobile Repair in Delhi</a> · <a href="https://www.searchmee.in/delhi/car-repair.html">Car Repair in Delhi</a> · <a href="https://www.searchmee.in/delhi/bike-repair.html">Bike Repair in Delhi</a> · <a href="https://www.searchmee.in/delhi/hospitals.html">Hospitals in Delhi</a> · <a href="https://www.searchmee.in/delhi/coaching-centres.html">Coaching in Delhi</a> · <a href="https://www.searchmee.in/delhi/jewellery.html">Jewellery in Delhi</a> · <a href="https://www.searchmee.in/delhi/pet-shops.html">Pet Shops in Delhi</a> · <a href="https://www.searchmee.in/delhi/furniture-shops.html">Furniture in Delhi</a> · <a href="https://www.searchmee.in/delhi/sweet-shops.html">Sweet Shops in Delhi</a> · <a href="https://www.searchmee.in/delhi/hardware-stores.html">Hardware in Delhi</a> · <a href="https://www.searchmee.in/delhi/computer-repair.html">Computer in Delhi</a> · <a href="https://www.searchmee.in/delhi/pg-hostel.html">PG &amp; Hostel in Delhi</a></p></div><div class="seo-city"><h3>Ghaziabad</h3><p><a href="https://www.searchmee.in/ghaziabad/kirana-stores.html">Kirana Stores in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/medical-stores.html">Medical Shops in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/electricians.html">Electricians in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/plumbers.html">Plumbers in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/ac-repair.html">AC Repair in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/salons.html">Salons in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/restaurants.html">Restaurants in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/gyms.html">Gyms in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/mobile-repair.html">Mobile Repair in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/car-repair.html">Car Repair in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/bike-repair.html">Bike Repair in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/hospitals.html">Hospitals in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/coaching-centres.html">Coaching in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/jewellery.html">Jewellery in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/pet-shops.html">Pet Shops in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/furniture-shops.html">Furniture in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/sweet-shops.html">Sweet Shops in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/hardware-stores.html">Hardware in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/computer-repair.html">Computer in Ghaziabad</a> · <a href="https://www.searchmee.in/ghaziabad/pg-hostel.html">PG &amp; Hostel in Ghaziabad</a></p></div><div class="seo-city"><h3>Greater Noida</h3><p><a href="https://www.searchmee.in/greater-noida/kirana-stores.html">Kirana Stores in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/medical-stores.html">Medical Shops in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/electricians.html">Electricians in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/plumbers.html">Plumbers in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/ac-repair.html">AC Repair in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/salons.html">Salons in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/restaurants.html">Restaurants in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/gyms.html">Gyms in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/mobile-repair.html">Mobile Repair in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/car-repair.html">Car Repair in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/bike-repair.html">Bike Repair in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/hospitals.html">Hospitals in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/coaching-centres.html">Coaching in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/jewellery.html">Jewellery in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/pet-shops.html">Pet Shops in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/furniture-shops.html">Furniture in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/sweet-shops.html">Sweet Shops in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/hardware-stores.html">Hardware in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/computer-repair.html">Computer in Greater Noida</a> · <a href="https://www.searchmee.in/greater-noida/pg-hostel.html">PG &amp; Hostel in Greater Noida</a></p></div><div class="seo-city"><h3>Lucknow</h3><p><a href="https://www.searchmee.in/lucknow/kirana-stores.html">Kirana Stores in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/medical-stores.html">Medical Shops in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/electricians.html">Electricians in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/plumbers.html">Plumbers in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/ac-repair.html">AC Repair in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/salons.html">Salons in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/restaurants.html">Restaurants in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/gyms.html">Gyms in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/mobile-repair.html">Mobile Repair in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/car-repair.html">Car Repair in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/bike-repair.html">Bike Repair in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/hospitals.html">Hospitals in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/coaching-centres.html">Coaching in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/jewellery.html">Jewellery in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/pet-shops.html">Pet Shops in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/furniture-shops.html">Furniture in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/sweet-shops.html">Sweet Shops in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/hardware-stores.html">Hardware in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/computer-repair.html">Computer in Lucknow</a> · <a href="https://www.searchmee.in/lucknow/pg-hostel.html">PG &amp; Hostel in Lucknow</a></p></div><div class="seo-city"><h3>Agra</h3><p><a href="https://www.searchmee.in/agra/kirana-stores.html">Kirana Stores in Agra</a> · <a href="https://www.searchmee.in/agra/medical-stores.html">Medical Shops in Agra</a> · <a href="https://www.searchmee.in/agra/electricians.html">Electricians in Agra</a> · <a href="https://www.searchmee.in/agra/plumbers.html">Plumbers in Agra</a> · <a href="https://www.searchmee.in/agra/ac-repair.html">AC Repair in Agra</a> · <a href="https://www.searchmee.in/agra/salons.html">Salons in Agra</a> · <a href="https://www.searchmee.in/agra/restaurants.html">Restaurants in Agra</a> · <a href="https://www.searchmee.in/agra/gyms.html">Gyms in Agra</a> · <a href="https://www.searchmee.in/agra/mobile-repair.html">Mobile Repair in Agra</a> · <a href="https://www.searchmee.in/agra/car-repair.html">Car Repair in Agra</a> · <a href="https://www.searchmee.in/agra/bike-repair.html">Bike Repair in Agra</a> · <a href="https://www.searchmee.in/agra/hospitals.html">Hospitals in Agra</a> · <a href="https://www.searchmee.in/agra/coaching-centres.html">Coaching in Agra</a> · <a href="https://www.searchmee.in/agra/jewellery.html">Jewellery in Agra</a> · <a href="https://www.searchmee.in/agra/pet-shops.html">Pet Shops in Agra</a> · <a href="https://www.searchmee.in/agra/furniture-shops.html">Furniture in Agra</a> · <a href="https://www.searchmee.in/agra/sweet-shops.html">Sweet Shops in Agra</a> · <a href="https://www.searchmee.in/agra/hardware-stores.html">Hardware in Agra</a> · <a href="https://www.searchmee.in/agra/computer-repair.html">Computer in Agra</a> · <a href="https://www.searchmee.in/agra/pg-hostel.html">PG &amp; Hostel in Agra</a></p></div></div>
+    </details>
   </div>
   <div class="wrap foot-row">
-    <div class="foot-brand">Search<span>Mee</span></div>
+    <div class="foot-brand"><img src="logo-96.png" alt="SearchMee logo" width="26" height="26"><div class="lt">Search<span>Mee</span></div></div>
     <div class="foot-links">
       <a href="https://instagram.com/searchmee.in" target="_blank" rel="noopener">Instagram</a>
       <a href="#privacy-policy">Privacy Policy</a>
@@ -685,5 +794,14 @@
   });
 </script>
 
+<script>
+(function(){
+  var r=document.getElementById('pc-r'), n=document.getElementById('pc-n'), o=document.getElementById('pc-out');
+  if(!r||!n||!o) return;
+  function show(v){ v=Math.max(0,Math.min(5000,parseInt(v,10)||0)); o.textContent=(v*75).toLocaleString('en-IN'); return v; }
+  r.addEventListener('input',function(){ n.value=r.value; show(r.value); });
+  n.addEventListener('input',function(){ var v=show(n.value); r.value=Math.min(v,1500); });
+})();
+</script>
 </body>
 </html>
