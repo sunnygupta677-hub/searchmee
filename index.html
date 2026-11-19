@@ -108,8 +108,21 @@
     gap: 6px;
     white-space: nowrap;
   }
-  @media (max-width: 780px) { .nav-links { display: none; } }
-
+    @media (max-width: 780px) {
+    nav.top .row { flex-wrap: wrap; row-gap: 12px; }
+    .nav-links {
+      order: 3;
+      width: 100%;
+      gap: 18px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { flex: none; font-size: 13.5px; }
+    html { scroll-padding-top: 110px; }
+  }
   /* ---------- Hero ---------- */
   .hero {
     background: linear-gradient(180deg, var(--navy) 0%, var(--navy) 55%, var(--navy-deep) 100%);
